@@ -25,6 +25,7 @@ public class Main {
         ServletContextHandler webSocketContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
         webSocketContext.setContextPath("/");
         webSocketServer.setHandler(webSocketContext);
+        System.out.println("Starting server..");
 
         // Starting the container and linking the endpoint to it
         try {
