@@ -13,7 +13,7 @@ public class Websocket {
 
     @OnOpen
     public void onOpen(Session session) {
-        System.out.println("Connection ready.");
+        System.out.println("A user has connected.");
     }
 
     @OnMessage
@@ -23,7 +23,7 @@ public class Websocket {
 
     @OnClose
     public void onClose(CloseReason reason, Session session) {
-        System.out.println("Closed the connection due to [" + reason + "]");
+        System.out.println("A user closed the connection due to [" + reason + "]");
     }
 
     @OnError
