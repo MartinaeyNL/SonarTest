@@ -1,10 +1,10 @@
-package toolboard.main;
+package streamerchat.main;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.util.*;
 
-@ServerEndpoint(value = "/toolboard/")
+@ServerEndpoint(value = "/streamerchat/")
 public class Websocket {
 
     //private Session session;
