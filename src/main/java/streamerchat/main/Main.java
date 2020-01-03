@@ -28,7 +28,7 @@ public class Main {
         // Starting the container and linking the endpoint to it
         try {
             ServerContainer container = WebSocketServerContainerInitializer.configureContext(webSocketContext);
-            container.addEndpoint(Websocket.class);
+            container.addEndpoint(ChatWebSocket.class);
             webSocketServer.start(); // Start the server
             webSocketServer.join(); // Wait till server is ready
         }
