@@ -22,10 +22,13 @@ public class WSContext {
         strategies.put(WSMessageType.getAllChatLobbies, new GetAllChatLobbies_Strategy());
     }
 
-    public static Object start(WSMessageType type, Object parameter, User user, Controller controller) {
+    public static WSMessage start(WSMessageType type, Object parameter, User user, Controller controller) {
         WSMessageTypeStrategy strategy = strategies.get(type);
         Object toReturn = strategy.start(parameter, user, controller);
         //System.out.println("The object that the strategy pattern returned was: [" + toReturn + "]");
-        return toReturn;
+        if(type != null && toReturn != null) {
+            return new WSMessage(type, toReturn);
+        }
+        return null;
     }
 }

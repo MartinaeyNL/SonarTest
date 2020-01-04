@@ -42,10 +42,9 @@ public class ChatWebSocket {
         Gson converter = new Gson();
         WSMessage wsMessage = converter.fromJson(message, WSMessage.class);
         User user = new User(session.getId());
-        Object returnedValue = WSContext.start(wsMessage.messageType, wsMessage.object, user, this.controller);
-        if(returnedValue != null) {
-            this.sendFinalMessage(session, new WSMessage(wsMessage.messageType, returnedValue));
-            // Maybe messageType could be done differently because it's the same as the one that is sent
+        WSMessage toSend = WSContext.start(wsMessage.messageType, wsMessage.object, user, this.controller);
+        if(toSend != null) {
+            this.sendFinalMessage(session, toSend);
         }
         //System.out.println("Received the websocket message: " + wsMessage);
         System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
