@@ -5,6 +5,7 @@ import streamerchat.messagetypes.JoinChatLobby_Strategy;
 import streamerchat.messagetypes.WSMessageType;
 import streamerchat.messagetypes.WSMessageTypeStrategy;
 import streamerchat.models.Controller;
+import streamerchat.models.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,10 +22,10 @@ public class WSContext {
         strategies.put(WSMessageType.getAllChatLobbies, new GetAllChatLobbies_Strategy());
     }
 
-    public static Object start(WSMessageType type, Object parameter, Controller controller) {
+    public static Object start(WSMessageType type, Object parameter, User user, Controller controller) {
         WSMessageTypeStrategy strategy = strategies.get(type);
-        Object toReturn = strategy.start(parameter, controller);
-        System.out.println("The object that the strategy pattern returned was: [" + toReturn + "]");
+        Object toReturn = strategy.start(parameter, user, controller);
+        //System.out.println("The object that the strategy pattern returned was: [" + toReturn + "]");
         return toReturn;
     }
 }

@@ -3,17 +3,17 @@ package streamerchat.models;
 public class User {
 
     // Variables
-    private String username;
+    private String sessionId;
 
     // Constructor
-    public User(String username) {
-        this.username = username;
+    public User(String sessionId) {
+        this.sessionId = sessionId;
     }
 
     /*--------------------------------------------*/
 
     // Get&set methods
-    public String getUsername() { return this.username; }
+    public String getSessionId() { return this.sessionId; }
 
 
 }

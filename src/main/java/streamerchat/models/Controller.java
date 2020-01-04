@@ -18,18 +18,20 @@ public class Controller {
 
     /*------------------------------------------------*/
 
-    public boolean doesChatLobbyExist(String name) {
+    public ChatLobby getChatLobby(String name) {
         for(ChatLobby lobby : this.getAllLobbies()) {
             if(lobby.displayname.equals(name)) {
-                return true;
+                return lobby;
             }
         }
-        return false;
+        return null;
     }
 
     // Main methods of the class
-    public void addConnectedUser(String userId) {
-        this.connectedUsers.add(new User(userId));
+    public User addConnectedUser(String userId) {
+        User user = new User(userId);
+        this.connectedUsers.add(user);
+        return user;
     }
 
     // Creation of the lobbies
@@ -42,8 +44,8 @@ public class Controller {
     /*-------------------------------------------------------*/
 
     // Web Socket methods
-    public void addUserToLobby() {
-
+    public void addUserToLobby(ChatLobby lobby, User user) {
+        lobby.users.add(user);
     }
 
 

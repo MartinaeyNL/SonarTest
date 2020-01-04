@@ -3,6 +3,7 @@ package streamerchat.main;
 import com.google.gson.Gson;
 import streamerchat.messagetypes.WSMessageType;
 import streamerchat.models.Controller;
+import streamerchat.models.User;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
@@ -30,8 +31,9 @@ public class ChatWebSocket {
     public void onOpen(Session session) {
         System.out.println("A user has connected.");
         this.connectedSessions.add(session);
-        this.controller.addConnectedUser(session.getId());
-        this.sendFinalMessage(session, new WSMessage(WSMessageType.getAllChatLobbies, this.controller.getAllLobbies()));
+        User user = this.controller.addConnectedUser(session.getId());
+        Object toSend = WSContext.start(WSMessageType.getAllChatLobbies, null, user, this.controller);
+        this.sendFinalMessage(session, new WSMessage(WSMessageType.getAllChatLobbies, toSend));
     }
 
     @OnMessage
@@ -39,9 +41,14 @@ public class ChatWebSocket {
         //System.out.println("Received the message: " + message);
         Gson converter = new Gson();
         WSMessage wsMessage = converter.fromJson(message, WSMessage.class);
-        WSContext.start(wsMessage.messageType, wsMessage.object, this.controller);
-        System.out.println("Received the websocket message: " + wsMessage);
-        System.out.println("The messageType is [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
+        User user = new User(session.getId());
+        Object returnedValue = WSContext.start(wsMessage.messageType, wsMessage.object, user, this.controller);
+        if(returnedValue != null) {
+            this.sendFinalMessage(session, new WSMessage(wsMessage.messageType, returnedValue));
+            // Maybe messageType could be done differently because it's the same as the one that is sent
+        }
+        //System.out.println("Received the websocket message: " + wsMessage);
+        System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
     }
 
     @OnClose
@@ -79,7 +86,10 @@ public class ChatWebSocket {
         String message = converter.toJson(wsMessage);
 
         // Sending the actual object
-        try { session.getBasicRemote().sendObject(message); }
+        try {
+            session.getBasicRemote().sendObject(message);
+            System.out.println("Successfully sent message! It was " + message);
+        }
         catch (EncodeException ee) {
             try { session.getBasicRemote().sendText("Something went wrong with sending the lobby object! :("); }
             catch (Exception ex) { ex.printStackTrace(); } // Temporary !!!
