@@ -26,6 +26,11 @@ public class WSContext {
         WSMessageTypeStrategy strategy = strategies.get(type);
         Object toReturn = strategy.start(parameter, user, controller);
         //System.out.println("The object that the strategy pattern returned was: [" + toReturn + "]");
+        if(toReturn instanceof Exception) {
+            type = WSMessageType.error;
+            toReturn = ((Exception) toReturn).getMessage();
+            System.out.println("There was a freaking error! Wow! This is him: [" + toReturn + "]");
+        }
         if(type != null && toReturn != null) {
             return new WSMessage(type, toReturn);
         }

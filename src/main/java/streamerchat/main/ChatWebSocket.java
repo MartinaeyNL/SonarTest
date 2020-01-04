@@ -32,8 +32,8 @@ public class ChatWebSocket {
         System.out.println("A user has connected.");
         this.connectedSessions.add(session);
         User user = this.controller.addConnectedUser(session.getId());
-        Object toSend = WSContext.start(WSMessageType.getAllChatLobbies, null, user, this.controller);
-        this.sendFinalMessage(session, new WSMessage(WSMessageType.getAllChatLobbies, toSend));
+        WSMessage toSend = WSContext.start(WSMessageType.getAllChatLobbies, null, user, this.controller);
+        this.sendFinalMessage(session, toSend);
     }
 
     @OnMessage
@@ -41,13 +41,13 @@ public class ChatWebSocket {
         //System.out.println("Received the message: " + message);
         Gson converter = new Gson();
         WSMessage wsMessage = converter.fromJson(message, WSMessage.class);
+        System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
+
         User user = new User(session.getId());
         WSMessage toSend = WSContext.start(wsMessage.messageType, wsMessage.object, user, this.controller);
         if(toSend != null) {
             this.sendFinalMessage(session, toSend);
         }
-        //System.out.println("Received the websocket message: " + wsMessage);
-        System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
     }
 
     @OnClose
