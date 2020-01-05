@@ -64,10 +64,12 @@ public class Controller {
     }
 
     // Web Socket methods
-    public void addUserToLobby(String lobbyName, User user) {
+    public void addUserToLobby(String lobbyName, User user) throws Exception {
         ChatLobby lobby = this.getChatLobby(lobbyName);
+        if(lobby == null) {
+            throw new Exception("The lobby you wanted to join doesn't exist!");
+        }
         lobby.addUser(user);
-        System.out.println("User is [" + user + "]");
     }
 
     public void removeUserFromLobby(String lobbyName, User user) {
