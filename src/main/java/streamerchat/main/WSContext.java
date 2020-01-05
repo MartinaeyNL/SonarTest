@@ -10,8 +10,8 @@ import java.util.Map;
 public class WSContext {
 
     // Variables
-    private static Controller controller;
-    private static Map<WSMessageType, WSMessageTypeStrategy> strategies;
+    private Controller controller;
+    private Map<WSMessageType, WSMessageTypeStrategy> strategies;
 
     // Constructor
     public WSContext() {
@@ -25,7 +25,7 @@ public class WSContext {
     /*--------------------------------------------------------------------------*/
 
     // Main method for starting procedure
-    public static WSMessage start(WSMessageType type, Object parameter, String sessionId) {
+    public WSMessage start(WSMessageType type, Object parameter, String sessionId) {
         WSMessageTypeStrategy strategy = strategies.get(type);
         User user = controller.getConnectedUser(sessionId);
         Object toReturn = strategy.start(parameter, user, controller);
@@ -44,11 +44,11 @@ public class WSContext {
     /*-----------------------------------------------------------------*/
 
     // User Connections
-    public static void addConnectedUser(String sessionId) {
+    public void addConnectedUser(String sessionId) {
         controller.addConnectedUser(sessionId);
     }
 
-    public static void removeConnectedUser(String sessionId) {
+    public void removeConnectedUser(String sessionId) {
         controller.removeConnectedUser(sessionId);
     }
 }

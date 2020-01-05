@@ -14,20 +14,20 @@ import java.util.*;
 public class ChatWebSocket {
 
     // Variables
-    private WSContext wsContext;
+    private static WSContext wsContext = new WSContext();
 
     // Constructor
-    public ChatWebSocket() {
-        this.wsContext = new WSContext();
-    }
+    //public ChatWebSocket() {
+    //    this.wsContext = new WSContext();
+    //}
 
     /*-------------------------------------------------*/
 
     @OnOpen
     public void onOpen(Session session) {
         System.out.println("A user has connected.");
-        WSContext.addConnectedUser(session.getId());
-        WSMessage toSend = WSContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
+        wsContext.addConnectedUser(session.getId());
+        WSMessage toSend = wsContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
         this.sendFinalMessage(session, toSend);
     }
 
@@ -38,7 +38,7 @@ public class ChatWebSocket {
         WSMessage wsMessage = converter.fromJson(message, WSMessage.class);
         System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
 
-        WSMessage toSend = WSContext.start(wsMessage.messageType, wsMessage.object, session.getId());
+        WSMessage toSend = wsContext.start(wsMessage.messageType, wsMessage.object, session.getId());
         if(toSend != null) {
             this.sendFinalMessage(session, toSend);
         }
@@ -47,7 +47,7 @@ public class ChatWebSocket {
     @OnClose
     public void onClose(CloseReason reason, Session session) {
         System.out.println("A user closed the connection due to [" + reason + "]");
-        WSContext.removeConnectedUser(session.getId());
+        wsContext.removeConnectedUser(session.getId());
     }
 
     @OnError
@@ -57,22 +57,8 @@ public class ChatWebSocket {
 
     /*---------------------------------------------------------------*/
 
-    // the method where other classes can send messages from
-
-    // public void sendMessage(String userId, String messageType, Object o) {
-    //    boolean test = false;
-    //    for(Session s : this.connectedSessions) {
-    //        if(s.getId().equals(userId)) {
-    //            this.sendFinalMessage(s, new WSMessage(messageType, o));
-    //            test = true;
-    //        }
-    //    }
-    //    if(!test) { System.out.println("Couldn't find session! Oof."); }
-    //}
-
-
     // sendMessage method
-    private void sendFinalMessage(Session session, WSMessage wsMessage) {
+    public void sendFinalMessage(Session session, WSMessage wsMessage) {
 
         // Converting it to JSON
         Gson converter = new Gson();
