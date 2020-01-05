@@ -14,12 +14,10 @@ import java.util.*;
 public class ChatWebSocket {
 
     // Variables
-    private Controller controller;
     private WSContext wsContext;
 
     // Constructor
     public ChatWebSocket() {
-        this.controller = new Controller();
         this.wsContext = new WSContext();
     }
 
@@ -28,8 +26,8 @@ public class ChatWebSocket {
     @OnOpen
     public void onOpen(Session session) {
         System.out.println("A user has connected.");
-        this.controller.addConnectedUser(session.getId());
-        WSMessage toSend = WSContext.start(WSMessageType.getAllChatLobbies, null, session.getId(), this.controller);
+        WSContext.addConnectedUser(session.getId());
+        WSMessage toSend = WSContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
         this.sendFinalMessage(session, toSend);
     }
 
@@ -40,7 +38,7 @@ public class ChatWebSocket {
         WSMessage wsMessage = converter.fromJson(message, WSMessage.class);
         System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
 
-        WSMessage toSend = WSContext.start(wsMessage.messageType, wsMessage.object, session.getId(), this.controller);
+        WSMessage toSend = WSContext.start(wsMessage.messageType, wsMessage.object, session.getId());
         if(toSend != null) {
             this.sendFinalMessage(session, toSend);
         }
@@ -49,7 +47,7 @@ public class ChatWebSocket {
     @OnClose
     public void onClose(CloseReason reason, Session session) {
         System.out.println("A user closed the connection due to [" + reason + "]");
-        this.controller.removeConnectedUser(session.getId());
+        WSContext.removeConnectedUser(session.getId());
     }
 
     @OnError

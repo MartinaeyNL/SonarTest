@@ -10,17 +10,22 @@ import java.util.Map;
 public class WSContext {
 
     // Variables
+    private static Controller controller;
     private static Map<WSMessageType, WSMessageTypeStrategy> strategies;
 
     // Constructor
     public WSContext() {
+        controller = new Controller();
         strategies = new HashMap<>();
         strategies.put(WSMessageType.joinChatLobby, new JoinChatLobby_Strategy());
         strategies.put(WSMessageType.leaveChatLobby, new LeaveChatLobby_Strategy());
         strategies.put(WSMessageType.getAllChatLobbies, new GetAllChatLobbies_Strategy());
     }
 
-    public static WSMessage start(WSMessageType type, Object parameter, String sessionId, Controller controller) {
+    /*--------------------------------------------------------------------------*/
+
+    // Main method for starting procedure
+    public static WSMessage start(WSMessageType type, Object parameter, String sessionId) {
         WSMessageTypeStrategy strategy = strategies.get(type);
         User user = controller.getConnectedUser(sessionId);
         Object toReturn = strategy.start(parameter, user, controller);
@@ -34,5 +39,16 @@ public class WSContext {
             return new WSMessage(type, toReturn);
         }
         return null;
+    }
+
+    /*-----------------------------------------------------------------*/
+
+    // User Connections
+    public static void addConnectedUser(String sessionId) {
+        controller.addConnectedUser(sessionId);
+    }
+
+    public static void removeConnectedUser(String sessionId) {
+        controller.removeConnectedUser(sessionId);
     }
 }

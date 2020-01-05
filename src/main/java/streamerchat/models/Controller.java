@@ -21,18 +21,18 @@ public class Controller {
     /*----------------------------------------------------------------------*/
 
     // Main methods of the class
-    public void addConnectedUser(String userId) {
-        User user = new User(userId);
+    public void addConnectedUser(String sessionId) {
+        User user = new User(sessionId);
         this.connectedUsers.add(user);
     }
 
-    public User getConnectedUser(String userId) {
-        Optional<User> oUser = this.connectedUsers.stream().filter(item -> item.getSessionId().equals(userId)).findFirst();
+    public User getConnectedUser(String sessionId) {
+        Optional<User> oUser = this.connectedUsers.stream().filter(item -> item.getSessionId().equals(sessionId)).findFirst();
         return oUser.orElse(null);
     }
 
-    public void removeConnectedUser(String userId) {
-        User user = this.getConnectedUser(userId);
+    public void removeConnectedUser(String sessionId) {
+        User user = this.getConnectedUser(sessionId);
         if(user != null) {
             this.connectedUsers.remove(user);
         }

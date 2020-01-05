@@ -1,0 +1,13 @@
+streamerchat\models\User.class
+streamerchat\main\WSMessage.class
+streamerchat\main\WSContext.class
+streamerchat\messagetypes\JoinChatLobby_Strategy.class
+streamerchat\messagetypes\GetAllChatLobbies_Strategy.class
+streamerchat\models\ChatLobby.class
+streamerchat\main\ChatWebSocket.class
+streamerchat\messagetypes\LeaveChatLobby_Strategy.class
+streamerchat\messagetypes\WSMessageType.class
+streamerchat\models\Controller.class
+streamerchat\messagetypes\WSMessageTypeStrategy.class
+module-info.class
+streamerchat\main\Main.class
