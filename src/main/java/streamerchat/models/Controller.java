@@ -31,7 +31,8 @@ public class Controller {
         return oUser.orElse(null);
     }
 
-    private void removeConnectedUser(User user) {
+    public Collection<User> getAllUsers() {
+        return this.connectedUsers;
     }
 
     public void disconnectUser(String sessionId) {

@@ -6,6 +6,7 @@ import streamerchat.messagetypes.WSMessageType;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.Collection;
 
 @ServerEndpoint(value = "/streamerchat/")
 public class ChatWebSocket {
@@ -24,8 +25,12 @@ public class ChatWebSocket {
     public void onOpen(Session session) {
         System.out.println("A user has connected.");
         wsContext.connectUser(session.getId());
-        WSMessage toSend = wsContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
-        this.sendFinalMessage(session, toSend);
+        Collection<WSMessage> toSend = wsContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
+        if(toSend != null) {
+            for(WSMessage item : toSend) {
+                this.sendFinalMessage(session, item);
+            }
+        }
     }
 
     @OnMessage
@@ -35,9 +40,11 @@ public class ChatWebSocket {
         WSMessage wsMessage = converter.fromJson(message, WSMessage.class);
         System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
 
-        WSMessage toSend = wsContext.start(wsMessage.messageType, wsMessage.object, session.getId());
+        Collection<WSMessage> toSend = wsContext.start(wsMessage.messageType, wsMessage.object, session.getId());
         if(toSend != null) {
-            this.sendFinalMessage(session, toSend);
+            for(WSMessage item : toSend) {
+                this.sendFinalMessage(session, item);
+            }
         }
     }
 
