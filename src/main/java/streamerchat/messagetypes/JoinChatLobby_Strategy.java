@@ -19,7 +19,7 @@ public class JoinChatLobby_Strategy implements WSMessageTypeStrategy {
                 if(lobby.users.size() > 0)
                     for(User loopUser : lobby.users) {
                         if(!loopUser.getSessionId().equals(user.getSessionId())) {
-                            controller.addUserToLobby(lobby, user);
+                            controller.addUserToLobby(lobbyName, user);
                             System.out.println("Joining the chatlobby " + parameter);
                         }
                         else {
@@ -28,7 +28,7 @@ public class JoinChatLobby_Strategy implements WSMessageTypeStrategy {
                         }
                     }
                 else {
-                    controller.addUserToLobby(lobby, user);
+                    controller.addUserToLobby(lobbyName, user);
                     System.out.println("Joining the chatlobby " + parameter);
                 }
             }
@@ -37,6 +37,7 @@ public class JoinChatLobby_Strategy implements WSMessageTypeStrategy {
                 return new IllegalArgumentException("The lobby you wanted to join doesn't exist!");
             }
         }
+        else { return new IllegalArgumentException("The lobby you put in is not a string!"); }
 
         //System.out.println("I've arrived at the right strategy stuff meuk ding hahahahahahaahahahahah pop");
         return null;

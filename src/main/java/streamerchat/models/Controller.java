@@ -1,7 +1,9 @@
 package streamerchat.models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Optional;
 
 public class Controller {
 
@@ -28,10 +30,17 @@ public class Controller {
     }
 
     // Main methods of the class
-    public User addConnectedUser(String userId) {
+    public void addConnectedUser(String userId) {
         User user = new User(userId);
         this.connectedUsers.add(user);
-        return user;
+    }
+
+    public User getConnectedUser(String userId) {
+        //Optional<Object> user = Arrays.stream(this.connectedUsers.toArray()).filter(item -> item.getClass() != null).findFirst();
+        //return user;
+
+        Optional<User> oUser = this.connectedUsers.stream().filter(item -> item.getSessionId().equals(userId)).findFirst();
+        return oUser.orElse(null);
     }
 
     // Creation of the lobbies
@@ -44,8 +53,16 @@ public class Controller {
     /*-------------------------------------------------------*/
 
     // Web Socket methods
-    public void addUserToLobby(ChatLobby lobby, User user) {
+    public void addUserToLobby(String lobbyName, User user) {
+        ChatLobby lobby = this.getChatLobby(lobbyName);
         lobby.users.add(user);
+        System.out.println("User is [" + user + "]");
+    }
+
+    public void removeUserFromLobby(String lobbyName, User user) {
+        ChatLobby lobby = this.getChatLobby(lobbyName);
+        lobby.users.remove(user);
+        System.out.println("User is [" + user + "]");
     }
 
 
