@@ -31,21 +31,19 @@ public class Controller {
         return oUser.orElse(null);
     }
 
-    private void removeConnectedUser(String sessionId) {
-        User user = this.getConnectedUser(sessionId);
-        if(user != null) {
-            this.connectedUsers.remove(user);
-        }
-        else {
-            System.out.println("AAAAHHHHHHHH USER NOT REMOVED AAAAAAAA");
-        }
+    private void removeConnectedUser(User user) {
     }
 
     public void disconnectUser(String sessionId) {
         User user = this.getConnectedUser(sessionId);
+        if(user == null) {
+            System.out.println("OKAY THIS IS WEIRD THE USER DOESN'T EXIST!!! TAAADUUUUUUU TAAAADUUUUUUUUUUUUUUUUUUUU");
+            return;
+        }
         for(ChatLobby lobby : this.chatLobbies) {
             this.removeUserFromLobby(lobby.getDisplayname(), user);
         }
+        this.connectedUsers.remove(user);
     }
 
     /*----------------------------------------------------------------------*/
