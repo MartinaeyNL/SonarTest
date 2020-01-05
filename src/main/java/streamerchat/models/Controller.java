@@ -18,16 +18,7 @@ public class Controller {
         this.createNewLobbies(5);
     }
 
-    /*------------------------------------------------*/
-
-    public ChatLobby getChatLobby(String name) {
-        for(ChatLobby lobby : this.getAllLobbies()) {
-            if(lobby.displayname.equals(name)) {
-                return lobby;
-            }
-        }
-        return null;
-    }
+    /*----------------------------------------------------------------------*/
 
     // Main methods of the class
     public void addConnectedUser(String userId) {
@@ -50,6 +41,8 @@ public class Controller {
         }
     }
 
+    /*----------------------------------------------------------------------*/
+
     // Creation of the lobbies
     private void createNewLobbies(int amount) {
         for(int i = 0; i < amount; i++) {
@@ -57,7 +50,11 @@ public class Controller {
         }
     }
 
-    /*-------------------------------------------------------*/
+    // Return the lobby with that name
+    public ChatLobby getChatLobby(String name) {
+        Optional<ChatLobby> oLobby = this.chatLobbies.stream().filter(item -> item.displayname.equals(name)).findFirst();
+        return oLobby.orElse(null);
+    }
 
     // Web Socket methods
     public void addUserToLobby(String lobbyName, User user) {
@@ -71,7 +68,6 @@ public class Controller {
         lobby.users.remove(user);
         System.out.println("User is [" + user + "]");
     }
-
 
     /*-----------------------------------------------------*/
 
