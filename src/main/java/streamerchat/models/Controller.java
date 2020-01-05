@@ -36,11 +36,18 @@ public class Controller {
     }
 
     public User getConnectedUser(String userId) {
-        //Optional<Object> user = Arrays.stream(this.connectedUsers.toArray()).filter(item -> item.getClass() != null).findFirst();
-        //return user;
-
         Optional<User> oUser = this.connectedUsers.stream().filter(item -> item.getSessionId().equals(userId)).findFirst();
         return oUser.orElse(null);
+    }
+
+    public void removeConnectedUser(String userId) {
+        User user = this.getConnectedUser(userId);
+        if(user != null) {
+            this.connectedUsers.remove(user);
+        }
+        else {
+            System.out.println("AAAAHHHHHHHH USER NOT REMOVED AAAAAAAA");
+        }
     }
 
     // Creation of the lobbies

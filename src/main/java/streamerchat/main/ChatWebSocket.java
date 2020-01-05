@@ -14,13 +14,11 @@ import java.util.*;
 public class ChatWebSocket {
 
     // Variables
-    private Collection<Session> connectedSessions; // List of sessions
     private Controller controller;
     private WSContext wsContext;
 
     // Constructor
     public ChatWebSocket() {
-        this.connectedSessions = new ArrayList<>();
         this.controller = new Controller();
         this.wsContext = new WSContext();
     }
@@ -30,7 +28,6 @@ public class ChatWebSocket {
     @OnOpen
     public void onOpen(Session session) {
         System.out.println("A user has connected.");
-        this.connectedSessions.add(session);
         this.controller.addConnectedUser(session.getId());
         WSMessage toSend = WSContext.start(WSMessageType.getAllChatLobbies, null, session.getId(), this.controller);
         this.sendFinalMessage(session, toSend);
@@ -52,7 +49,7 @@ public class ChatWebSocket {
     @OnClose
     public void onClose(CloseReason reason, Session session) {
         System.out.println("A user closed the connection due to [" + reason + "]");
-        this.connectedSessions.remove(session);
+        this.controller.removeConnectedUser(session.getId());
     }
 
     @OnError
