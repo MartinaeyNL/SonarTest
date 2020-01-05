@@ -44,11 +44,11 @@ public class WSContext {
     /*-----------------------------------------------------------------*/
 
     // User Connections
-    public void addConnectedUser(String sessionId) {
+    public void connectUser(String sessionId) {
         controller.addConnectedUser(sessionId);
     }
 
-    public void removeConnectedUser(String sessionId) {
-        controller.removeConnectedUser(sessionId);
+    public void disconnectUser(String sessionId) {
+        controller.disconnectUser(sessionId);
     }
 }

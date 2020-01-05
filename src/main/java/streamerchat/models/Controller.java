@@ -31,13 +31,20 @@ public class Controller {
         return oUser.orElse(null);
     }
 
-    public void removeConnectedUser(String sessionId) {
+    private void removeConnectedUser(String sessionId) {
         User user = this.getConnectedUser(sessionId);
         if(user != null) {
             this.connectedUsers.remove(user);
         }
         else {
             System.out.println("AAAAHHHHHHHH USER NOT REMOVED AAAAAAAA");
+        }
+    }
+
+    public void disconnectUser(String sessionId) {
+        User user = this.getConnectedUser(sessionId);
+        for(ChatLobby lobby : this.chatLobbies) {
+            this.removeUserFromLobby(lobby.getDisplayname(), user);
         }
     }
 
@@ -52,20 +59,20 @@ public class Controller {
 
     // Return the lobby with that name
     public ChatLobby getChatLobby(String name) {
-        Optional<ChatLobby> oLobby = this.chatLobbies.stream().filter(item -> item.displayname.equals(name)).findFirst();
+        Optional<ChatLobby> oLobby = this.chatLobbies.stream().filter(item -> item.getDisplayname().equals(name)).findFirst();
         return oLobby.orElse(null);
     }
 
     // Web Socket methods
     public void addUserToLobby(String lobbyName, User user) {
         ChatLobby lobby = this.getChatLobby(lobbyName);
-        lobby.users.add(user);
+        lobby.addUser(user);
         System.out.println("User is [" + user + "]");
     }
 
     public void removeUserFromLobby(String lobbyName, User user) {
         ChatLobby lobby = this.getChatLobby(lobbyName);
-        lobby.users.remove(user);
+        lobby.removeUser(user);
         System.out.println("User is [" + user + "]");
     }
 

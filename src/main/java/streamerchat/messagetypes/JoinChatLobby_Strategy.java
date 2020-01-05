@@ -4,6 +4,8 @@ import streamerchat.models.ChatLobby;
 import streamerchat.models.Controller;
 import streamerchat.models.User;
 
+import java.util.Collection;
+
 public class JoinChatLobby_Strategy implements WSMessageTypeStrategy {
 
     @Override
@@ -16,17 +18,17 @@ public class JoinChatLobby_Strategy implements WSMessageTypeStrategy {
             // All other checks
             ChatLobby lobby = controller.getChatLobby(lobbyName);
             if(lobby != null) {
-                if(lobby.users.size() > 0)
-                    for(User loopUser : lobby.users) {
-                        if(!loopUser.getSessionId().equals(user.getSessionId())) {
-                            controller.addUserToLobby(lobbyName, user);
-                            System.out.println("Joining the chatlobby " + parameter);
-                        }
-                        else {
+                Collection<User> users = lobby.getUsers();
+                if (users.size() > 0) {
+                    for (User loopUser : users) {
+                        if (loopUser.getSessionId().equals(user.getSessionId())) {
                             System.out.println("You've already joined this lobby!");
                             return new Exception("You've already joined this lobby!");
                         }
                     }
+                    controller.addUserToLobby(lobbyName, user);
+                    System.out.println("Joining the chatlobby " + parameter);
+                }
                 else {
                     controller.addUserToLobby(lobbyName, user);
                     System.out.println("Joining the chatlobby " + parameter);

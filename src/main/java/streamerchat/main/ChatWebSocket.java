@@ -2,13 +2,10 @@ package streamerchat.main;
 
 import com.google.gson.Gson;
 import streamerchat.messagetypes.WSMessageType;
-import streamerchat.models.Controller;
-import streamerchat.models.User;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
-import java.util.*;
 
 @ServerEndpoint(value = "/streamerchat/")
 public class ChatWebSocket {
@@ -26,7 +23,7 @@ public class ChatWebSocket {
     @OnOpen
     public void onOpen(Session session) {
         System.out.println("A user has connected.");
-        wsContext.addConnectedUser(session.getId());
+        wsContext.connectUser(session.getId());
         WSMessage toSend = wsContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
         this.sendFinalMessage(session, toSend);
     }
@@ -47,7 +44,7 @@ public class ChatWebSocket {
     @OnClose
     public void onClose(CloseReason reason, Session session) {
         System.out.println("A user closed the connection due to [" + reason + "]");
-        wsContext.removeConnectedUser(session.getId());
+        wsContext.disconnectUser(session.getId());
     }
 
     @OnError
