@@ -1,4 +1,4 @@
-package streamerchat.main;
+package streamerchat.websockets;
 
 import com.google.gson.Gson;
 import streamerchat.messagetypes.WSMessageType;
@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 @ServerEndpoint(value = "/streamerchat/")
-public class ChatWebSocket {
+public class ChatEndpoint {
 
     // Variables
     private static WSContext wsContext = new WSContext();
@@ -26,7 +26,7 @@ public class ChatWebSocket {
 
     @OnOpen
     public void onOpen(Session session) {
-        System.out.println("A user has connected.");
+        System.out.println("A user has connected to the Streamer Chat server.");
         connectedSessions.add(session);
         wsContext.connectUser(session.getId());
         Collection<WSMessage> toSend = wsContext.start(WSMessageType.getAllChatLobbies, null, session.getId());

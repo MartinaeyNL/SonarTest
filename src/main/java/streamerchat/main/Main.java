@@ -5,6 +5,8 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.websocket.jsr356.server.ServerContainer;
 import org.eclipse.jetty.websocket.jsr356.server.deploy.WebSocketServerContainerInitializer;
+import streamerchat.websockets.AuthEndpoint;
+import streamerchat.websockets.ChatEndpoint;
 
 public class Main {
 
@@ -28,7 +30,8 @@ public class Main {
         // Starting the container and linking the endpoint to it
         try {
             ServerContainer container = WebSocketServerContainerInitializer.configureContext(webSocketContext);
-            container.addEndpoint(ChatWebSocket.class);
+            container.addEndpoint(ChatEndpoint.class);
+            container.addEndpoint(AuthEndpoint.class);
             webSocketServer.start(); // Start the server
             webSocketServer.join(); // Wait till server is ready
         }

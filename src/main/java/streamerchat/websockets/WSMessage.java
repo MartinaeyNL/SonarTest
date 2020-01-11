@@ -1,4 +1,4 @@
-package streamerchat.main;
+package streamerchat.websockets;
 
 import streamerchat.messagetypes.WSMessageType;
 

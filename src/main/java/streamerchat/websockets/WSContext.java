@@ -1,4 +1,4 @@
-package streamerchat.main;
+package streamerchat.websockets;
 
 import streamerchat.messagetypes.*;
 import streamerchat.models.Controller;
@@ -19,6 +19,7 @@ public class WSContext {
     public WSContext() {
         controller = new Controller();
         strategies = new HashMap<>();
+        strategies.put(WSMessageType.authenticate, new Authenticate_Strategy());
         strategies.put(WSMessageType.joinChatLobby, new JoinChatLobby_Strategy());
         strategies.put(WSMessageType.leaveChatLobby, new LeaveChatLobby_Strategy());
         strategies.put(WSMessageType.getAllChatLobbies, new GetAllChatLobbies_Strategy());
