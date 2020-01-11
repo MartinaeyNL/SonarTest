@@ -6,12 +6,16 @@ import streamerchat.messagetypes.WSMessageType;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Optional;
 
 @ServerEndpoint(value = "/streamerchat/")
 public class ChatWebSocket {
 
     // Variables
     private static WSContext wsContext = new WSContext();
+    private static Collection<Session> connectedSessions = new ArrayList<>();
 
     // Constructor
     //public ChatWebSocket() {
@@ -23,9 +27,14 @@ public class ChatWebSocket {
     @OnOpen
     public void onOpen(Session session) {
         System.out.println("A user has connected.");
+        connectedSessions.add(session);
         wsContext.connectUser(session.getId());
-        WSMessage toSend = wsContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
-        this.sendFinalMessage(session, toSend);
+        Collection<WSMessage> toSend = wsContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
+        if(toSend != null) {
+            for(WSMessage item : toSend) {
+                this.sendFinalMessage(session, item);
+            }
+        }
     }
 
     @OnMessage
@@ -35,15 +44,21 @@ public class ChatWebSocket {
         WSMessage wsMessage = converter.fromJson(message, WSMessage.class);
         System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
 
-        WSMessage toSend = wsContext.start(wsMessage.messageType, wsMessage.object, session.getId());
+        Collection<WSMessage> toSend = wsContext.start(wsMessage.messageType, wsMessage.object, session.getId());
         if(toSend != null) {
-            this.sendFinalMessage(session, toSend);
+            for(WSMessage item : toSend) {
+                Session collected = this.getSessionById(item.receiver_SessionId);
+                if (collected != null) {
+                    this.sendFinalMessage(collected, item);
+                }
+            }
         }
     }
 
     @OnClose
     public void onClose(CloseReason reason, Session session) {
         System.out.println("A user closed the connection due to [" + reason + "]");
+        connectedSessions.remove(session);
         wsContext.disconnectUser(session.getId());
     }
 
@@ -55,7 +70,7 @@ public class ChatWebSocket {
     /*---------------------------------------------------------------*/
 
     // sendMessage method
-    public void sendFinalMessage(Session session, WSMessage wsMessage) {
+    private void sendFinalMessage(Session session, WSMessage wsMessage) {
 
         // Converting it to JSON
         Gson converter = new Gson();
@@ -73,5 +88,13 @@ public class ChatWebSocket {
         catch (IOException io_e) {
             io_e.printStackTrace(); // Temporary !!!
         }
+    }
+
+    private Session getSessionById(String sessionId) {
+        Optional<Session> session = connectedSessions.stream().filter(item -> item.getId().equals(sessionId)).findFirst();
+        if(session.isPresent()) {
+            return session.orElse(null);
+        }
+        return null;
     }
 }

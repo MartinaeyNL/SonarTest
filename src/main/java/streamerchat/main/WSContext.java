@@ -4,6 +4,8 @@ import streamerchat.messagetypes.*;
 import streamerchat.models.Controller;
 import streamerchat.models.User;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,22 +27,20 @@ public class WSContext {
     /*--------------------------------------------------------------------------*/
 
     // Main method for starting procedure
-    public WSMessage start(WSMessageType type, Object parameter, String sessionId) {
+    public Collection<WSMessage> start(WSMessageType type, Object parameter, String sessionId) {
         WSMessageTypeStrategy strategy = strategies.get(type);
         User user = controller.getConnectedUser(sessionId);
-        Object toReturn;
+        Collection<WSMessage> toReturn = new ArrayList<>();
 
         // Start
         try { toReturn = strategy.start(parameter, user, controller); }
         catch (Exception e) {
-            type = WSMessageType.error;
-            toReturn = e.getMessage();
+            toReturn.add(new WSMessage(user.getSessionId(), WSMessageType.error, e.getMessage()));
             System.out.println("There was a freaking error! Wow! This is him: [" + e.getMessage() + "]");
         }
 
-        // Finally sent the return message with the same type.
-        if(type != null && toReturn != null) {
-            return new WSMessage(type, toReturn);
+        if(toReturn.size() > 0) {
+            return toReturn;
         }
         return null;
     }
