@@ -1,6 +1,0 @@
-
-gsquid:CallToDeprecatedMethod "8Remove this use of "configureContext"; it is deprecated.(Ÿ¤³8åšÃñ-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÇÃŞºûÿÿÿÿ8Ñº¾Ãñ-
-esquid:UselessImportCheck	"5Remove this unused import 'javax.websocket.Endpoint'.(¿»ÃÁøÿÿÿÿ8™§Ãñ-
-Asquid:S1148%"#Use a logger to log this exception.(Â“å´8åšÃñ-

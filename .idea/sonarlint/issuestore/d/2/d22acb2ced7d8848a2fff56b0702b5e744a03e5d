@@ -1,12 +1,0 @@
-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ş¹­·øÿÿÿÿ8şÃñ-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ŒØœüÿÿÿÿ8şÃñ-
-Osquid:S1068",Remove this unused "sessions" private field.(ïàİÙøÿÿÿÿ8şÃñ-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÚÃ×™ıÿÿÿÿ8şÃñ-
-rsquid:S3008"TRename this field "ENDPOINTS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÌ¤8şÃñ-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÓĞ•èÿÿÿÿÿ8şÃñ-
-Ksquid:S1068"-Remove this unused "ENDPOINTS" private field.(óÌ¤8şÃñ-
