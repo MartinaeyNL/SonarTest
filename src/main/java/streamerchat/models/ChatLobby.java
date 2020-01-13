@@ -12,6 +12,7 @@ public class ChatLobby {
 
     // Constructor
     public ChatLobby(String name) {
+        if(name == null) { throw new IllegalArgumentException("The name can't be null"); } // Has to be unique
         this.displayName = name;
         this.sessions = new ArrayList<>();
         this.chatLog = new ArrayList<>();
@@ -19,15 +20,15 @@ public class ChatLobby {
 
     // Get&Set Methods
     public String getDisplayName() { return displayName; }
-    public Collection<Session> getSessions() { return sessions; }
-    public Collection<String> getChatLog() { return chatLog; }
+
+
+    /*------------------------------------------------------------*/
 
     public void addUser(Session session) {
         if (!this.isUserAlreadyInLobby(session)) {
             this.sessions.add(session);
             System.out.println("[LOG] User #" + session.getSessionId() + " joined ChatLobby " + this.displayName);
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("You've already joined this lobby!");
         }
     }

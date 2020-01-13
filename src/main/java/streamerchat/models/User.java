@@ -8,6 +8,7 @@ public class User {
 
     // Constructor
     public User(String displayName, String twitchUserId) {
+        if(displayName == null) { throw new IllegalArgumentException("The displayName can't be null"); }
         this.displayName = displayName;
         this.twitchUserId = twitchUserId;
     }

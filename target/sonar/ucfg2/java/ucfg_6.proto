@@ -1,16 +1,45 @@
 
-;streamerchat.models.User#getDisplayName()Ljava/lang/String;{
-qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/User.java ( "1*Í
-1{
-qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/User.java, (0Õ
- 
-{
-qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/User.java, (<
-%0java.lang.String"__id*-*+
-streamerchat.models.User"
-displayName"ó
-{
-qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/User.java% (=
-
-%0java.lang.StringB
-streamerchat.models.User
+^streamerchat.models.Controller#getChatLobby(Ljava/lang/String;)Lstreamerchat/models/ChatLobby;Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java; ;(!"1*˚
+1Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java<% <()ﬁ
+€
+Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java<% <(5
+%0java.util.Collection"__id*3*1 
+streamerchat.models.Controller"
+chatLobbiesÜÉ
+Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java<% <(>
+%1java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*
+
+%0java.util.Collection2stream()–Õ
+Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java<% <(q
+%2java.util.stream.Stream"Wjava.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;*
+
+%1java.util.stream.Stream*
+""2&filter(Ljava/util/function/Predicate;)àÖ
+Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java<% <(}
+%3java.util.Optional"7java.util.stream.Stream#findFirst()Ljava/util/Optional;*
+
+%2java.util.stream.Stream2findFirst()«
+ƒ
+Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java< <(~
+oLobbyjava.util.Optional"__id*
+
+%3java.util.Optional±Æ
+Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java= =("#
+%4streamerchat.models.ChatLobby"?java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;*
+
+oLobbyjava.util.Optional*
+""2orElse(Ljava/lang/Object;)"´
+Å
+wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java= =(#%
+#
+%4streamerchat.models.ChatLobby:
+namejava.lang.StringB" 
+streamerchat.models.Controller

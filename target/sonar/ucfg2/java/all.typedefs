@@ -16,112 +16,18 @@ getClass(),java.lang.Object#getClass()Ljava/lang/Class;5
 notifyAll()java.lang.Object#notifyAll()V"
 wait()java.lang.Object#wait()V*
 
-hashCode()java.lang.Object#hashCode()I‡
- streamerchat.websockets.Endpointjava.lang.Objectà
-1setWsContext(Lstreamerchat/websockets/WSContext;)Sstreamerchat.websockets.Endpoint#setWsContext(Lstreamerchat/websockets/WSContext;)V§
-?onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)astreamerchat.websockets.Endpoint#onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)V6
-<init>()*streamerchat.websockets.Endpoint#<init>()V¬
-NsendFinalMessage(Ljavax/websocket/Session;Lstreamerchat/websockets/WSMessage;)pstreamerchat.websockets.Endpoint#sendFinalMessage(Ljavax/websocket/Session;Lstreamerchat/websockets/WSMessage;)Ví
-6onMessage(Ljava/lang/String;Ljavax/websocket/Session;)Xstreamerchat.websockets.Endpoint#onMessage(Ljava/lang/String;Ljavax/websocket/Session;)Vh
-!onOpen(Ljavax/websocket/Session;)Cstreamerchat.websockets.Endpoint#onOpen(Ljavax/websocket/Session;)VÇ
-"getSessionById(Ljava/lang/String;)\streamerchat.websockets.Endpoint#getSessionById(Ljava/lang/String;)Ljavax/websocket/Session;Ô
-dexecuteMessage(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljavax/websocket/Session;)Üstreamerchat.websockets.Endpoint#executeMessage(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljavax/websocket/Session;)Vn
-$sendMessages(Ljava/util/Collection;)Fstreamerchat.websockets.Endpoint#sendMessages(Ljava/util/Collection;)Vî
-7onError(Ljava/lang/Throwable;Ljavax/websocket/Session;)Ystreamerchat.websockets.Endpoint#onError(Ljava/lang/Throwable;Ljavax/websocket/Session;)V—
-$streamerchat.websockets.ChatEndpoint streamerchat.websockets.Endpoint®
-?onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)estreamerchat.websockets.ChatEndpoint#onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)V:
-<init>().streamerchat.websockets.ChatEndpoint#<init>()Vñ
-6onMessage(Ljava/lang/String;Ljavax/websocket/Session;)\streamerchat.websockets.ChatEndpoint#onMessage(Ljava/lang/String;Ljavax/websocket/Session;)Vl
-!onOpen(Ljavax/websocket/Session;)Gstreamerchat.websockets.ChatEndpoint#onOpen(Ljavax/websocket/Session;)Vò
-7onError(Ljava/lang/Throwable;Ljavax/websocket/Session;)]streamerchat.websockets.ChatEndpoint#onError(Ljava/lang/Throwable;Ljavax/websocket/Session;)V(
-java.lang.Appendablejava.lang.Object+
-java.lang.AutoCloseablejava.lang.Object>
-java.io.Closeablejava.lang.Objectjava.lang.AutoCloseable%
-java.io.Flushablejava.lang.ObjectÉ
-java.io.OutputStreamjava.io.Closeablejava.lang.Objectjava.io.FlushableS
-nullOutputStream()=java.io.OutputStream#nullOutputStream()Ljava/io/OutputStream;,
-	write([B)java.io.OutputStream#write([B)V*
-<init>()java.io.OutputStream#<init>()V(
-flush()java.io.OutputStream#flush()V0
-write([BII)!java.io.OutputStream#write([BII)V(
-close()java.io.OutputStream#close()Vé
-java.io.FilterOutputStreamjava.io.OutputStream2
-	write([B)%java.io.FilterOutputStream#write([B)V\
-<init>(Ljava/io/OutputStream;):java.io.FilterOutputStream#<init>(Ljava/io/OutputStream;)V.
-flush()#java.io.FilterOutputStream#flush()V0
-write(I)$java.io.FilterOutputStream#write(I)V6
-write([BII)'java.io.FilterOutputStream#write([BII)V.
-close()#java.io.FilterOutputStream#close()VÖ 
-java.io.PrintStreamjava.lang.Appendablejava.io.Closeablejava.io.FilterOutputStream+
-	write([C)java.io.PrintStream#write([C)V)
-print(J)java.io.PrintStream#print(J)V-
-
-println(J)java.io.PrintStream#println(J)V)
-print(F)java.io.PrintStream#print(F)V-
-
-println(F)java.io.PrintStream#println(F)V/
-write([BII) java.io.PrintStream#write([BII)VÅ
-4<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)Ijava.io.PrintStream#<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)V)
-print(Z)java.io.PrintStream#print(Z)V1
-clearError()!java.io.PrintStream#clearError()V-
-
-println(Z)java.io.PrintStream#println(Z)Vi
-(<init>(Ljava/io/File;Ljava/lang/String;)=java.io.PrintStream#<init>(Ljava/io/File;Ljava/lang/String;)V)
-write(I)java.io.PrintStream#write(I)VO
-println(Ljava/lang/Object;)0java.io.PrintStream#println(Ljava/lang/Object;)VK
-print(Ljava/lang/String;).java.io.PrintStream#print(Ljava/lang/String;)Ví
-4requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Zjava.io.PrintStream#requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;)
-print(I)java.io.PrintStream#print(I)V-
-
-println(I)java.io.PrintStream#println(I)V'
-flush()java.io.PrintStream#flush()V´
-?format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)hjava.io.PrintStream#format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;m
- append(Ljava/lang/CharSequence;)Ijava.io.PrintStream#append(Ljava/lang/CharSequence;)Ljava/io/PrintStream;l
-toCharset(Ljava/lang/String;)Kjava.io.PrintStream#toCharset(Ljava/lang/String;)Ljava/nio/charset/Charset;W
-<init>(ZLjava/io/OutputStream;)4java.io.PrintStream#<init>(ZLjava/io/OutputStream;)V+
-	print([C)java.io.PrintStream#print([C)Vq
-"append(Ljava/lang/CharSequence;II)Kjava.io.PrintStream#append(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;)
-print(D)java.io.PrintStream#print(D)Vq
-,<init>(Ljava/lang/String;Ljava/lang/String;)Ajava.io.PrintStream#<init>(Ljava/lang/String;Ljava/lang/String;)V-
-
-println(D)java.io.PrintStream#println(D)VO
-println(Ljava/lang/String;)0java.io.PrintStream#println(Ljava/lang/String;)VW
-<init>(Ljava/io/OutputStream;Z)4java.io.PrintStream#<init>(Ljava/io/OutputStream;Z)VE
-<init>(Ljava/io/File;)+java.io.PrintStream#<init>(Ljava/io/File;)Vy
-0<init>(Ljava/io/File;Ljava/nio/charset/Charset;)Ejava.io.PrintStream#<init>(Ljava/io/File;Ljava/nio/charset/Charset;)V1
-ensureOpen()!java.io.PrintStream#ensureOpen()Vã
-9<init>(Ljava/io/OutputStream;ZLjava/nio/charset/Charset;)Njava.io.PrintStream#<init>(Ljava/io/OutputStream;ZLjava/nio/charset/Charset;)V´
-?printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)hjava.io.PrintStream#printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;-
-
-setError()java.io.PrintStream#setError()Vá
--printf(Ljava/lang/String;[Ljava/lang/Object;)Vjava.io.PrintStream#printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;?
-	append(C)2java.io.PrintStream#append(C)Ljava/io/PrintStream;M
-<init>(Ljava/lang/String;)/java.io.PrintStream#<init>(Ljava/lang/String;)Vá
--format(Ljava/lang/String;[Ljava/lang/Object;)Vjava.io.PrintStream#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;+
-	newLine()java.io.PrintStream#newLine()V)
-print(C)java.io.PrintStream#print(C)V1
-checkError()!java.io.PrintStream#checkError()Z+
-	println()java.io.PrintStream#println()V'
-close()java.io.PrintStream#close()V-
-
-println(C)java.io.PrintStream#println(C)VK
-write(Ljava/lang/String;).java.io.PrintStream#write(Ljava/lang/String;)VK
-print(Ljava/lang/Object;).java.io.PrintStream#print(Ljava/lang/Object;)V{
-1<init>(Ljava/io/OutputStream;ZLjava/lang/String;)Fjava.io.PrintStream#<init>(Ljava/io/OutputStream;ZLjava/lang/String;)VU
-<init>(Ljava/io/OutputStream;)3java.io.PrintStream#<init>(Ljava/io/OutputStream;)V/
-println([C) java.io.PrintStream#println([C)Vã
-9<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)Njava.io.PrintStream#<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)V™
-!streamerchat.websockets.WSContextjava.lang.ObjectÂ
-Tstart(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljava/lang/String;)åstreamerchat.websockets.WSContext#start(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljava/lang/String;)Ljava/util/Collection;7
-<init>()+streamerchat.websockets.WSContext#<init>()Vk
-"disconnectUser(Ljava/lang/String;)Estreamerchat.websockets.WSContext#disconnectUser(Ljava/lang/String;)Ve
-connectUser(Ljava/lang/String;)Bstreamerchat.websockets.WSContext#connectUser(Ljava/lang/String;)Vá
-%streamerchat.websockets.ChatWSContext!streamerchat.websockets.WSContext;
-<init>()/streamerchat.websockets.ChatWSContext#<init>()VC
-/streamerchat.messagetypes.WSMessageTypeStrategyjava.lang.Objectƒ
-4streamerchat.messagetypes.GetAllChatLobbies_Strategy/streamerchat.messagetypes.WSMessageTypeStrategyjava.lang.Object¸
-Vstart(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)°streamerchat.messagetypes.GetAllChatLobbies_Strategy#start(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)Ljava/util/Collection;J
-<init>()>streamerchat.messagetypes.GetAllChatLobbies_Strategy#<init>()V÷
+hashCode()java.lang.Object#hashCode()Iû	
+streamerchat.models.Controllerjava.lang.Object¢
+?addUserToLobby(Ljava/lang/String;Lstreamerchat/models/Session;)_streamerchat.models.Controller#addUserToLobby(Ljava/lang/String;Lstreamerchat/models/Session;)Vl
+$addConnectedUser(Ljava/lang/String;)Dstreamerchat.models.Controller#addConnectedUser(Ljava/lang/String;)VÇ
+ getChatLobby(Ljava/lang/String;)^streamerchat.models.Controller#getChatLobby(Ljava/lang/String;)Lstreamerchat/models/ChatLobby;4
+<init>()(streamerchat.models.Controller#<init>()Vh
+"disconnectUser(Ljava/lang/String;)Bstreamerchat.models.Controller#disconnectUser(Ljava/lang/String;)VS
+getAllUsers()Bstreamerchat.models.Controller#getAllUsers()Ljava/util/Collection;¨
+DremoveUserFromLobby(Ljava/lang/String;Lstreamerchat/models/Session;)dstreamerchat.models.Controller#removeUserFromLobby(Ljava/lang/String;Lstreamerchat/models/Session;)VJ
+createNewLobbies(I)3streamerchat.models.Controller#createNewLobbies(I)VW
+getAllLobbies()Dstreamerchat.models.Controller#getAllLobbies()Ljava/util/Collection;à
+$getConnectedUser(Ljava/lang/String;)`streamerchat.models.Controller#getConnectedUser(Ljava/lang/String;)Lstreamerchat/models/Session;÷
 java.lang.Iterablejava.lang.Objectd
 &forEach(Ljava/util/function/Consumer;):java.lang.Iterable#forEach(Ljava/util/function/Consumer;)VH
 spliterator()7java.lang.Iterable#spliterator()Ljava/util/Spliterator;å
@@ -259,18 +165,191 @@ iterator()2java.util.ArrayList#iterator()Ljava/util/Iterator;I
 size()java.util.ArrayList#size()I÷
 streamerchat.models.Sessionjava.lang.ObjectN
 getSessionId()<streamerchat.models.Session#getSessionId()Ljava/lang/String;U
-<init>(Ljava/lang/String;)7streamerchat.models.Session#<init>(Ljava/lang/String;)Vû	
-streamerchat.models.Controllerjava.lang.Object¢
-?addUserToLobby(Ljava/lang/String;Lstreamerchat/models/Session;)_streamerchat.models.Controller#addUserToLobby(Ljava/lang/String;Lstreamerchat/models/Session;)Vl
-$addConnectedUser(Ljava/lang/String;)Dstreamerchat.models.Controller#addConnectedUser(Ljava/lang/String;)VÇ
- getChatLobby(Ljava/lang/String;)^streamerchat.models.Controller#getChatLobby(Ljava/lang/String;)Lstreamerchat/models/ChatLobby;4
-<init>()(streamerchat.models.Controller#<init>()Vh
-"disconnectUser(Ljava/lang/String;)Bstreamerchat.models.Controller#disconnectUser(Ljava/lang/String;)VS
-getAllUsers()Bstreamerchat.models.Controller#getAllUsers()Ljava/util/Collection;¨
-DremoveUserFromLobby(Ljava/lang/String;Lstreamerchat/models/Session;)dstreamerchat.models.Controller#removeUserFromLobby(Ljava/lang/String;Lstreamerchat/models/Session;)VJ
-createNewLobbies(I)3streamerchat.models.Controller#createNewLobbies(I)VW
-getAllLobbies()Dstreamerchat.models.Controller#getAllLobbies()Ljava/util/Collection;à
-$getConnectedUser(Ljava/lang/String;)`streamerchat.models.Controller#getConnectedUser(Ljava/lang/String;)Lstreamerchat/models/Session;â
+<init>(Ljava/lang/String;)7streamerchat.models.Session#<init>(Ljava/lang/String;)V+
+java.lang.AutoCloseablejava.lang.ObjectH
+java.util.stream.BaseStreamjava.lang.Objectjava.lang.AutoCloseableÄ
+java.util.stream.Streamjava.util.stream.BaseStreamjava.lang.ObjectÏ
+[iterate(Ljava/lang/Object;Ljava/util/function/Predicate;Ljava/util/function/UnaryOperator;)åjava.util.stream.Stream#iterate(Ljava/lang/Object;Ljava/util/function/Predicate;Ljava/util/function/UnaryOperator;)Ljava/util/stream/Stream;É
+'generate(Ljava/util/function/Supplier;)Xjava.util.stream.Stream#generate(Ljava/util/function/Supplier;)Ljava/util/stream/Stream;c
+of([Ljava/lang/Object;)Hjava.util.stream.Stream#of([Ljava/lang/Object;)Ljava/util/stream/Stream;a
+of(Ljava/lang/Object;)Gjava.util.stream.Stream#of(Ljava/lang/Object;)Ljava/util/stream/Stream;q
+ofNullable(Ljava/lang/Object;)Ojava.util.stream.Stream#ofNullable(Ljava/lang/Object;)Ljava/util/stream/Stream;Ø
+=iterate(Ljava/lang/Object;Ljava/util/function/UnaryOperator;)njava.util.stream.Stream#iterate(Ljava/lang/Object;Ljava/util/function/UnaryOperator;)Ljava/util/stream/Stream;C
+empty()8java.util.stream.Stream#empty()Ljava/util/stream/Stream;©
+:concat(Ljava/util/stream/Stream;Ljava/util/stream/Stream;)kjava.util.stream.Stream#concat(Ljava/util/stream/Stream;Ljava/util/stream/Stream;)Ljava/util/stream/Stream;O
+	builder()Bjava.util.stream.Stream#builder()Ljava/util/stream/Stream$Builder;á
+)takeWhile(Ljava/util/function/Predicate;)Zjava.util.stream.Stream#takeWhile(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;á
+)dropWhile(Ljava/util/function/Predicate;)Zjava.util.stream.Stream#dropWhile(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;¢
+java.util.Optionaljava.lang.ObjectL
+equals(Ljava/lang/Object;).java.util.Optional#equals(Ljava/lang/Object;)ZW
+of(Ljava/lang/Object;)=java.util.Optional#of(Ljava/lang/Object;)Ljava/util/Optional;*
+	isEmpty()java.util.Optional#isEmpty()Z=
+
+toString()/java.util.Optional#toString()Ljava/lang/String;}
+*orElseThrow(Ljava/util/function/Supplier;)Ojava.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;o
+"map(Ljava/util/function/Function;)Ijava.util.Optional#map(Ljava/util/function/Function;)Ljava/util/Optional;3
+get()*java.util.Optional#get()Ljava/lang/Object;ú
+BifPresentOrElse(Ljava/util/function/Consumer;Ljava/lang/Runnable;)Vjava.util.Optional#ifPresentOrElse(Ljava/util/function/Consumer;Ljava/lang/Runnable;)V,
+
+hashCode()java.util.Optional#hashCode()IL
+<init>(Ljava/lang/Object;).java.util.Optional#<init>(Ljava/lang/Object;)Vh
+(ifPresent(Ljava/util/function/Consumer;)<java.util.Optional#ifPresent(Ljava/util/function/Consumer;)V]
+orElse(Ljava/lang/Object;)?java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;m
+!or(Ljava/util/function/Supplier;)Hjava.util.Optional#or(Ljava/util/function/Supplier;)Ljava/util/Optional;g
+ofNullable(Ljava/lang/Object;)Ejava.util.Optional#ofNullable(Ljava/lang/Object;)Ljava/util/Optional;(
+<init>()java.util.Optional#<init>()VC
+orElseThrow()2java.util.Optional#orElseThrow()Ljava/lang/Object;y
+(orElseGet(Ljava/util/function/Supplier;)Mjava.util.Optional#orElseGet(Ljava/util/function/Supplier;)Ljava/lang/Object;w
+&flatMap(Ljava/util/function/Function;)Mjava.util.Optional#flatMap(Ljava/util/function/Function;)Ljava/util/Optional;9
+empty().java.util.Optional#empty()Ljava/util/Optional;w
+&filter(Ljava/util/function/Predicate;)Mjava.util.Optional#filter(Ljava/util/function/Predicate;)Ljava/util/Optional;.
+isPresent()java.util.Optional#isPresent()Z@
+stream()4java.util.Optional#stream()Ljava/util/stream/Stream;(
+java.lang.Appendablejava.lang.Object>
+java.io.Closeablejava.lang.Objectjava.lang.AutoCloseable%
+java.io.Flushablejava.lang.ObjectÉ
+java.io.OutputStreamjava.io.Closeablejava.lang.Objectjava.io.FlushableS
+nullOutputStream()=java.io.OutputStream#nullOutputStream()Ljava/io/OutputStream;,
+	write([B)java.io.OutputStream#write([B)V*
+<init>()java.io.OutputStream#<init>()V(
+flush()java.io.OutputStream#flush()V0
+write([BII)!java.io.OutputStream#write([BII)V(
+close()java.io.OutputStream#close()Vé
+java.io.FilterOutputStreamjava.io.OutputStream2
+	write([B)%java.io.FilterOutputStream#write([B)V\
+<init>(Ljava/io/OutputStream;):java.io.FilterOutputStream#<init>(Ljava/io/OutputStream;)V.
+flush()#java.io.FilterOutputStream#flush()V0
+write(I)$java.io.FilterOutputStream#write(I)V6
+write([BII)'java.io.FilterOutputStream#write([BII)V.
+close()#java.io.FilterOutputStream#close()VÖ 
+java.io.PrintStreamjava.lang.Appendablejava.io.Closeablejava.io.FilterOutputStream+
+	write([C)java.io.PrintStream#write([C)V)
+print(J)java.io.PrintStream#print(J)V-
+
+println(J)java.io.PrintStream#println(J)V)
+print(F)java.io.PrintStream#print(F)V-
+
+println(F)java.io.PrintStream#println(F)V/
+write([BII) java.io.PrintStream#write([BII)VÅ
+4<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)Ijava.io.PrintStream#<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)V)
+print(Z)java.io.PrintStream#print(Z)V1
+clearError()!java.io.PrintStream#clearError()V-
+
+println(Z)java.io.PrintStream#println(Z)Vi
+(<init>(Ljava/io/File;Ljava/lang/String;)=java.io.PrintStream#<init>(Ljava/io/File;Ljava/lang/String;)V)
+write(I)java.io.PrintStream#write(I)VO
+println(Ljava/lang/Object;)0java.io.PrintStream#println(Ljava/lang/Object;)VK
+print(Ljava/lang/String;).java.io.PrintStream#print(Ljava/lang/String;)Ví
+4requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Zjava.io.PrintStream#requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;)
+print(I)java.io.PrintStream#print(I)V-
+
+println(I)java.io.PrintStream#println(I)V'
+flush()java.io.PrintStream#flush()V´
+?format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)hjava.io.PrintStream#format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;m
+ append(Ljava/lang/CharSequence;)Ijava.io.PrintStream#append(Ljava/lang/CharSequence;)Ljava/io/PrintStream;l
+toCharset(Ljava/lang/String;)Kjava.io.PrintStream#toCharset(Ljava/lang/String;)Ljava/nio/charset/Charset;W
+<init>(ZLjava/io/OutputStream;)4java.io.PrintStream#<init>(ZLjava/io/OutputStream;)V+
+	print([C)java.io.PrintStream#print([C)Vq
+"append(Ljava/lang/CharSequence;II)Kjava.io.PrintStream#append(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;)
+print(D)java.io.PrintStream#print(D)Vq
+,<init>(Ljava/lang/String;Ljava/lang/String;)Ajava.io.PrintStream#<init>(Ljava/lang/String;Ljava/lang/String;)V-
+
+println(D)java.io.PrintStream#println(D)VO
+println(Ljava/lang/String;)0java.io.PrintStream#println(Ljava/lang/String;)VW
+<init>(Ljava/io/OutputStream;Z)4java.io.PrintStream#<init>(Ljava/io/OutputStream;Z)VE
+<init>(Ljava/io/File;)+java.io.PrintStream#<init>(Ljava/io/File;)Vy
+0<init>(Ljava/io/File;Ljava/nio/charset/Charset;)Ejava.io.PrintStream#<init>(Ljava/io/File;Ljava/nio/charset/Charset;)V1
+ensureOpen()!java.io.PrintStream#ensureOpen()Vã
+9<init>(Ljava/io/OutputStream;ZLjava/nio/charset/Charset;)Njava.io.PrintStream#<init>(Ljava/io/OutputStream;ZLjava/nio/charset/Charset;)V´
+?printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)hjava.io.PrintStream#printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;-
+
+setError()java.io.PrintStream#setError()Vá
+-printf(Ljava/lang/String;[Ljava/lang/Object;)Vjava.io.PrintStream#printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;?
+	append(C)2java.io.PrintStream#append(C)Ljava/io/PrintStream;M
+<init>(Ljava/lang/String;)/java.io.PrintStream#<init>(Ljava/lang/String;)Vá
+-format(Ljava/lang/String;[Ljava/lang/Object;)Vjava.io.PrintStream#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;+
+	newLine()java.io.PrintStream#newLine()V)
+print(C)java.io.PrintStream#print(C)V1
+checkError()!java.io.PrintStream#checkError()Z+
+	println()java.io.PrintStream#println()V'
+close()java.io.PrintStream#close()V-
+
+println(C)java.io.PrintStream#println(C)VK
+write(Ljava/lang/String;).java.io.PrintStream#write(Ljava/lang/String;)VK
+print(Ljava/lang/Object;).java.io.PrintStream#print(Ljava/lang/Object;)V{
+1<init>(Ljava/io/OutputStream;ZLjava/lang/String;)Fjava.io.PrintStream#<init>(Ljava/io/OutputStream;ZLjava/lang/String;)VU
+<init>(Ljava/io/OutputStream;)3java.io.PrintStream#<init>(Ljava/io/OutputStream;)V/
+println([C) java.io.PrintStream#println([C)Vã
+9<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)Njava.io.PrintStream#<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)V˙
+streamerchat.models.ChatLobbyjava.lang.Objectu
+)removeUser(Lstreamerchat/models/Session;)Hstreamerchat.models.ChatLobby#removeUser(Lstreamerchat/models/Session;)VT
+getDisplayName()@streamerchat.models.ChatLobby#getDisplayName()Ljava/lang/String;P
+getChatLog()@streamerchat.models.ChatLobby#getChatLog()Ljava/util/Collection;W
+<init>(Ljava/lang/String;)9streamerchat.models.ChatLobby#<init>(Ljava/lang/String;)VR
+getSessions()Astreamerchat.models.ChatLobby#getSessions()Ljava/util/Collection;â
+3isUserAlreadyInLobby(Lstreamerchat/models/Session;)Rstreamerchat.models.ChatLobby#isUserAlreadyInLobby(Lstreamerchat/models/Session;)Zo
+&addUser(Lstreamerchat/models/Session;)Estreamerchat.models.ChatLobby#addUser(Lstreamerchat/models/Session;)V√
+java.lang.Throwablejava.lang.Objectjava.io.Serializable;
+printStackTrace()&java.lang.Throwable#printStackTrace()VZ
+getOurStackTrace()Djava.lang.Throwable#getOurStackTrace()[Ljava/lang/StackTraceElement;¡
+ìprintEnclosedStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;[Ljava/lang/StackTraceElement;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)®java.lang.Throwable#printEnclosedStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;[Ljava/lang/StackTraceElement;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)V>
+
+toString()0java.lang.Throwable#toString()Ljava/lang/String;w
+/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.lang.Throwable#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VB
+getMessage()2java.lang.Throwable#getMessage()Ljava/lang/String;Q
+fillInStackTrace();java.lang.Throwable#fillInStackTrace()Ljava/lang/Throwable;s
+-setStackTrace([Ljava/lang/StackTraceElement;)Bjava.lang.Throwable#setStackTrace([Ljava/lang/StackTraceElement;)Va
+$addSuppressed(Ljava/lang/Throwable;)9java.lang.Throwable#addSuppressed(Ljava/lang/Throwable;)Vç
+:printStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;)Ojava.lang.Throwable#printStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;)Vm
+ initCause(Ljava/lang/Throwable;)Ijava.lang.Throwable#initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;)
+<init>()java.lang.Throwable#<init>()VT
+getStackTrace()Ajava.lang.Throwable#getStackTrace()[Ljava/lang/StackTraceElement;A
+
+getCause()3java.lang.Throwable#getCause()Ljava/lang/Throwable;e
+&printStackTrace(Ljava/io/PrintStream;);java.lang.Throwable#printStackTrace(Ljava/io/PrintStream;)Vg
+'readObject(Ljava/io/ObjectInputStream;)<java.lang.Throwable#readObject(Ljava/io/ObjectInputStream;)VM
+<init>(Ljava/lang/String;)/java.lang.Throwable#<init>(Ljava/lang/String;)VT
+getLocalizedMessage();java.lang.Throwable#getLocalizedMessage()Ljava/lang/String;e
+&printStackTrace(Ljava/io/PrintWriter;);java.lang.Throwable#printStackTrace(Ljava/io/PrintWriter;)V{
+1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Fjava.lang.Throwable#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VS
+fillInStackTrace(I)<java.lang.Throwable#fillInStackTrace(I)Ljava/lang/Throwable;S
+<init>(Ljava/lang/Throwable;)2java.lang.Throwable#<init>(Ljava/lang/Throwable;)Vk
+)writeObject(Ljava/io/ObjectOutputStream;)>java.lang.Throwable#writeObject(Ljava/io/ObjectOutputStream;)VL
+getSuppressed()9java.lang.Throwable#getSuppressed()[Ljava/lang/Throwable;Ô
+java.lang.Exceptionjava.lang.Throwable)
+<init>()java.lang.Exception#<init>()VM
+<init>(Ljava/lang/String;)/java.lang.Exception#<init>(Ljava/lang/String;)Vw
+/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.lang.Exception#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V{
+1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Fjava.lang.Exception#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VS
+<init>(Ljava/lang/Throwable;)2java.lang.Exception#<init>(Ljava/lang/Throwable;)V‡
+ streamerchat.websockets.Endpointjava.lang.Objectà
+1setWsContext(Lstreamerchat/websockets/WSContext;)Sstreamerchat.websockets.Endpoint#setWsContext(Lstreamerchat/websockets/WSContext;)V§
+?onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)astreamerchat.websockets.Endpoint#onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)V6
+<init>()*streamerchat.websockets.Endpoint#<init>()V¬
+NsendFinalMessage(Ljavax/websocket/Session;Lstreamerchat/websockets/WSMessage;)pstreamerchat.websockets.Endpoint#sendFinalMessage(Ljavax/websocket/Session;Lstreamerchat/websockets/WSMessage;)Ví
+6onMessage(Ljava/lang/String;Ljavax/websocket/Session;)Xstreamerchat.websockets.Endpoint#onMessage(Ljava/lang/String;Ljavax/websocket/Session;)Vh
+!onOpen(Ljavax/websocket/Session;)Cstreamerchat.websockets.Endpoint#onOpen(Ljavax/websocket/Session;)VÇ
+"getSessionById(Ljava/lang/String;)\streamerchat.websockets.Endpoint#getSessionById(Ljava/lang/String;)Ljavax/websocket/Session;Ô
+dexecuteMessage(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljavax/websocket/Session;)Üstreamerchat.websockets.Endpoint#executeMessage(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljavax/websocket/Session;)Vn
+$sendMessages(Ljava/util/Collection;)Fstreamerchat.websockets.Endpoint#sendMessages(Ljava/util/Collection;)Vî
+7onError(Ljava/lang/Throwable;Ljavax/websocket/Session;)Ystreamerchat.websockets.Endpoint#onError(Ljava/lang/Throwable;Ljavax/websocket/Session;)V—
+$streamerchat.websockets.ChatEndpoint streamerchat.websockets.Endpoint®
+?onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)estreamerchat.websockets.ChatEndpoint#onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)V:
+<init>().streamerchat.websockets.ChatEndpoint#<init>()Vñ
+6onMessage(Ljava/lang/String;Ljavax/websocket/Session;)\streamerchat.websockets.ChatEndpoint#onMessage(Ljava/lang/String;Ljavax/websocket/Session;)Vl
+!onOpen(Ljavax/websocket/Session;)Gstreamerchat.websockets.ChatEndpoint#onOpen(Ljavax/websocket/Session;)Vò
+7onError(Ljava/lang/Throwable;Ljavax/websocket/Session;)]streamerchat.websockets.ChatEndpoint#onError(Ljava/lang/Throwable;Ljavax/websocket/Session;)V™
+!streamerchat.websockets.WSContextjava.lang.ObjectÂ
+Tstart(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljava/lang/String;)åstreamerchat.websockets.WSContext#start(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljava/lang/String;)Ljava/util/Collection;7
+<init>()+streamerchat.websockets.WSContext#<init>()Vk
+"disconnectUser(Ljava/lang/String;)Estreamerchat.websockets.WSContext#disconnectUser(Ljava/lang/String;)Ve
+connectUser(Ljava/lang/String;)Bstreamerchat.websockets.WSContext#connectUser(Ljava/lang/String;)Vá
+%streamerchat.websockets.ChatWSContext!streamerchat.websockets.WSContext;
+<init>()/streamerchat.websockets.ChatWSContext#<init>()VC
+/streamerchat.messagetypes.WSMessageTypeStrategyjava.lang.Objectƒ
+4streamerchat.messagetypes.GetAllChatLobbies_Strategy/streamerchat.messagetypes.WSMessageTypeStrategyjava.lang.Object¸
+Vstart(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)°streamerchat.messagetypes.GetAllChatLobbies_Strategy#start(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)Ljava/util/Collection;J
+<init>()>streamerchat.messagetypes.GetAllChatLobbies_Strategy#<init>()Vâ
 !streamerchat.websockets.WSMessagejava.lang.Object—
 U<init>(Ljava/lang/String;Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;)xstreamerchat.websockets.WSMessage#<init>(Ljava/lang/String;Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;)V(
 java.lang.Comparablejava.lang.Object∂
@@ -541,40 +620,7 @@ Vstart(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Contr
 <init>()9streamerchat.messagetypes.Authenticate_Strategy#<init>()Vª
 1streamerchat.messagetypes.LeaveChatLobby_Strategy/streamerchat.messagetypes.WSMessageTypeStrategyjava.lang.Object˘
 Vstart(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)ûstreamerchat.messagetypes.LeaveChatLobby_Strategy#start(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)Ljava/util/Collection;G
-<init>();streamerchat.messagetypes.LeaveChatLobby_Strategy#<init>()V√
-java.lang.Throwablejava.lang.Objectjava.io.Serializable;
-printStackTrace()&java.lang.Throwable#printStackTrace()VZ
-getOurStackTrace()Djava.lang.Throwable#getOurStackTrace()[Ljava/lang/StackTraceElement;¡
-ìprintEnclosedStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;[Ljava/lang/StackTraceElement;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)®java.lang.Throwable#printEnclosedStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;[Ljava/lang/StackTraceElement;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)V>
-
-toString()0java.lang.Throwable#toString()Ljava/lang/String;w
-/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.lang.Throwable#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VB
-getMessage()2java.lang.Throwable#getMessage()Ljava/lang/String;Q
-fillInStackTrace();java.lang.Throwable#fillInStackTrace()Ljava/lang/Throwable;s
--setStackTrace([Ljava/lang/StackTraceElement;)Bjava.lang.Throwable#setStackTrace([Ljava/lang/StackTraceElement;)Va
-$addSuppressed(Ljava/lang/Throwable;)9java.lang.Throwable#addSuppressed(Ljava/lang/Throwable;)Vç
-:printStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;)Ojava.lang.Throwable#printStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;)Vm
- initCause(Ljava/lang/Throwable;)Ijava.lang.Throwable#initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;)
-<init>()java.lang.Throwable#<init>()VT
-getStackTrace()Ajava.lang.Throwable#getStackTrace()[Ljava/lang/StackTraceElement;A
-
-getCause()3java.lang.Throwable#getCause()Ljava/lang/Throwable;e
-&printStackTrace(Ljava/io/PrintStream;);java.lang.Throwable#printStackTrace(Ljava/io/PrintStream;)Vg
-'readObject(Ljava/io/ObjectInputStream;)<java.lang.Throwable#readObject(Ljava/io/ObjectInputStream;)VM
-<init>(Ljava/lang/String;)/java.lang.Throwable#<init>(Ljava/lang/String;)VT
-getLocalizedMessage();java.lang.Throwable#getLocalizedMessage()Ljava/lang/String;e
-&printStackTrace(Ljava/io/PrintWriter;);java.lang.Throwable#printStackTrace(Ljava/io/PrintWriter;)V{
-1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Fjava.lang.Throwable#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VS
-fillInStackTrace(I)<java.lang.Throwable#fillInStackTrace(I)Ljava/lang/Throwable;S
-<init>(Ljava/lang/Throwable;)2java.lang.Throwable#<init>(Ljava/lang/Throwable;)Vk
-)writeObject(Ljava/io/ObjectOutputStream;)>java.lang.Throwable#writeObject(Ljava/io/ObjectOutputStream;)VL
-getSuppressed()9java.lang.Throwable#getSuppressed()[Ljava/lang/Throwable;Ô
-java.lang.Exceptionjava.lang.Throwable)
-<init>()java.lang.Exception#<init>()VM
-<init>(Ljava/lang/String;)/java.lang.Exception#<init>(Ljava/lang/String;)Vw
-/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.lang.Exception#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V{
-1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Fjava.lang.Exception#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VS
-<init>(Ljava/lang/Throwable;)2java.lang.Exception#<init>(Ljava/lang/Throwable;)Vö
+<init>();streamerchat.messagetypes.LeaveChatLobby_Strategy#<init>()Vö
 java.lang.RuntimeExceptionjava.lang.Exception0
 <init>()$java.lang.RuntimeException#<init>()VT
 <init>(Ljava/lang/String;)6java.lang.RuntimeException#<init>(Ljava/lang/String;)V~
@@ -585,15 +631,7 @@ getCause()3java.lang.Throwable#getCause()Ljava/lang/Throwable;e
 <init>(),java.lang.IllegalArgumentException#<init>()V\
 <init>(Ljava/lang/String;)>java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)VÜ
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)Sjava.lang.IllegalArgumentException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)Vb
-<init>(Ljava/lang/Throwable;)Ajava.lang.IllegalArgumentException#<init>(Ljava/lang/Throwable;)V˙
-streamerchat.models.ChatLobbyjava.lang.Objectu
-)removeUser(Lstreamerchat/models/Session;)Hstreamerchat.models.ChatLobby#removeUser(Lstreamerchat/models/Session;)VT
-getDisplayName()@streamerchat.models.ChatLobby#getDisplayName()Ljava/lang/String;P
-getChatLog()@streamerchat.models.ChatLobby#getChatLog()Ljava/util/Collection;W
-<init>(Ljava/lang/String;)9streamerchat.models.ChatLobby#<init>(Ljava/lang/String;)VR
-getSessions()Astreamerchat.models.ChatLobby#getSessions()Ljava/util/Collection;â
-3isUserAlreadyInLobby(Lstreamerchat/models/Session;)Rstreamerchat.models.ChatLobby#isUserAlreadyInLobby(Lstreamerchat/models/Session;)Zo
-&addUser(Lstreamerchat/models/Session;)Estreamerchat.models.ChatLobby#addUser(Lstreamerchat/models/Session;)V”
+<init>(Ljava/lang/Throwable;)Ajava.lang.IllegalArgumentException#<init>(Ljava/lang/Throwable;)V”
 java.lang.CharSequencejava.lang.ObjectE
 chars():java.lang.CharSequence#chars()Ljava/util/stream/IntStream;é
 9compare(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Qjava.lang.CharSequence#compare(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)IO
@@ -763,7 +801,15 @@ toString()Forg.apache.http.entity.AbstractHttpEntity#toString()Ljava/lang/Strin
 4<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)Yorg.apache.http.entity.StringEntity#<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)V∏
 0streamerchat.messagetypes.JoinChatLobby_Strategy/streamerchat.messagetypes.WSMessageTypeStrategyjava.lang.Object¯
 Vstart(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)ùstreamerchat.messagetypes.JoinChatLobby_Strategy#start(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)Ljava/util/Collection;F
-<init>():streamerchat.messagetypes.JoinChatLobby_Strategy#<init>()V—
+<init>():streamerchat.messagetypes.JoinChatLobby_Strategy#<init>()V>
+javax.websocket.Sessionjava.io.Closeablejava.lang.Object2
+javax.websocket.RemoteEndpointjava.lang.ObjectX
+$javax.websocket.RemoteEndpoint$Basicjavax.websocket.RemoteEndpointjava.lang.ObjectÚ
+java.io.IOExceptionjava.lang.Exception)
+<init>()java.io.IOException#<init>()VM
+<init>(Ljava/lang/String;)/java.io.IOException#<init>(Ljava/lang/String;)Vw
+/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.io.IOException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VS
+<init>(Ljava/lang/Throwable;)2java.io.IOException#<init>(Ljava/lang/Throwable;)V—
 $streamerchat.websockets.AuthEndpoint streamerchat.websockets.Endpoint®
 ?onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)estreamerchat.websockets.AuthEndpoint#onClose(Ljavax/websocket/CloseReason;Ljavax/websocket/Session;)V:
 <init>().streamerchat.websockets.AuthEndpoint#<init>()Vñ
