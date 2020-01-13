@@ -11,9 +11,9 @@ public class ChatWSContext extends WSContext {
     public ChatWSContext() {
         this.controller = new Controller();
         this.strategies = new HashMap<>();
-        this.strategies.put(WSMessageType.joinChatLobby, new JoinChatLobby_Strategy());
-        this.strategies.put(WSMessageType.leaveChatLobby, new LeaveChatLobby_Strategy());
-        this.strategies.put(WSMessageType.getAllChatLobbies, new GetAllChatLobbies_Strategy());
+        this.strategies.put(WSMessageType.JOIN_CHAT_LOBBY, new JoinChatLobby_Strategy());
+        this.strategies.put(WSMessageType.LEAVE_CHAT_LOBBY, new LeaveChatLobby_Strategy());
+        this.strategies.put(WSMessageType.GET_ALL_CHAT_LOBBIES, new GetAllChatLobbies_Strategy());
     }
 
     /*--------------------------------------------------------------------------*/

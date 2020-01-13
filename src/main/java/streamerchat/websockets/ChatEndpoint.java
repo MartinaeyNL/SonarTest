@@ -4,7 +4,6 @@ import streamerchat.messagetypes.WSMessageType;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
-import java.util.Collection;
 
 @ServerEndpoint(value = "/streamerchat/")
 public class ChatEndpoint extends Endpoint {
@@ -16,7 +15,7 @@ public class ChatEndpoint extends Endpoint {
         System.out.println("A user has connected to the Streamer Chat server.");
         super.setWsContext(new ChatWSContext());
         super.onOpen(session);
-        super.executeMessage(WSMessageType.getAllChatLobbies, null, session);
+        super.executeMessage(WSMessageType.GET_ALL_CHAT_LOBBIES, null, session);
     }
 
     @OnMessage @Override

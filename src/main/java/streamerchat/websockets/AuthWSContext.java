@@ -11,6 +11,6 @@ public class AuthWSContext extends WSContext {
     public AuthWSContext() {
         this.controller = new Controller();
         this.strategies = new HashMap<>();
-        this.strategies.put(WSMessageType.authenticate, new Authenticate_Strategy());
+        this.strategies.put(WSMessageType.AUTHENTICATE, new Authenticate_Strategy());
     }
 }

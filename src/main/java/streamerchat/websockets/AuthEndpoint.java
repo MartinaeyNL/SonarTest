@@ -1,10 +1,7 @@
 package streamerchat.websockets;
 
-import streamerchat.messagetypes.WSMessageType;
-
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
-import java.util.Collection;
 
 @ServerEndpoint(value = "/auth/")
 public class AuthEndpoint extends Endpoint {

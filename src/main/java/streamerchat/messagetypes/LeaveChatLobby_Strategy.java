@@ -19,7 +19,7 @@ public class LeaveChatLobby_Strategy implements WSMessageTypeStrategy {
             String lobbyName = (String) parameter;
             controller.removeUserFromLobby(lobbyName, session);
             for(Session u : controller.getAllUsers()) {
-                toReturn.add(new WSMessage(u.getSessionId(), WSMessageType.getAllChatLobbies, controller.getAllLobbies()));
+                toReturn.add(new WSMessage(u.getSessionId(), WSMessageType.GET_ALL_CHAT_LOBBIES, controller.getAllLobbies()));
             }
             return toReturn;
         }

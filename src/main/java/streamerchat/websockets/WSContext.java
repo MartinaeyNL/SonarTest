@@ -24,7 +24,7 @@ public abstract class WSContext {
         // Start
         try { toReturn = strategy.start(parameter, session, controller); }
         catch (Exception e) {
-            toReturn.add(new WSMessage(session.getSessionId(), WSMessageType.error, e.getMessage()));
+            toReturn.add(new WSMessage(session.getSessionId(), WSMessageType.ERROR, e.getMessage()));
             System.out.println("There was a freaking error! Wow! This is him: [" + e.getMessage() + "]");
         }
 

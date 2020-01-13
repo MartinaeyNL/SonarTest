@@ -27,7 +27,7 @@ public class Authenticate_Strategy implements WSMessageTypeStrategy {
         // Parsing it to WSMessages
         if(result != null) {
             for(Object o : result) {
-                toReturn.add(new WSMessage(session.getSessionId(), WSMessageType.authenticate, o));
+                toReturn.add(new WSMessage(session.getSessionId(), WSMessageType.AUTHENTICATE, o));
             }
         }
         if(!toReturn.isEmpty()) { return toReturn; }
