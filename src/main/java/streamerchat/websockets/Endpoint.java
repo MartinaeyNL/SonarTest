@@ -1,4 +1,4 @@
 package streamerchat.websockets;
 
-public class WSContext {
+public class Endpoint {
 }
