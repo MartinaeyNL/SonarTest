@@ -3,16 +3,16 @@ package streamerchat.models;
 public class User {
 
     // Variables
-    private String displayname;
+    private String displayName;
     private String twitchUserId;
 
     // Constructor
-    public User(String displayname, String twitchUserId) {
-        this.displayname = displayname;
+    public User(String displayName, String twitchUserId) {
+        this.displayName = displayName;
         this.twitchUserId = twitchUserId;
     }
 
     // Get&Setters
-    public String getDisplayname() { return this.displayname; }
+    public String getDisplayName() { return this.displayName; }
     public String getTwitchUserId() { return this.twitchUserId; }
 }

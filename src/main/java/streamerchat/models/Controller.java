@@ -41,7 +41,7 @@ public class Controller {
             return;
         }
         for(ChatLobby lobby : this.chatLobbies) {
-            this.removeUserFromLobby(lobby.getDisplayname(), session);
+            this.removeUserFromLobby(lobby.getDisplayName(), session);
         }
         this.connectedSessions.remove(session);
     }
@@ -57,7 +57,7 @@ public class Controller {
 
     // Return the lobby with that name
     public ChatLobby getChatLobby(String name) {
-        Optional<ChatLobby> oLobby = this.chatLobbies.stream().filter(item -> item.getDisplayname().equals(name)).findFirst();
+        Optional<ChatLobby> oLobby = this.chatLobbies.stream().filter(item -> item.getDisplayName().equals(name)).findFirst();
         return oLobby.orElse(null);
     }
 
