@@ -14,14 +14,9 @@ public class ChatEndpoint extends Endpoint {
     @OnOpen @Override
     public void onOpen(Session session) {
         System.out.println("A user has connected to the Streamer Chat server.");
-        super.wsContext = new ChatWSContext();
+        super.setWsContext(new ChatWSContext());
         super.onOpen(session);
-        Collection<WSMessage> toSend = super.wsContext.start(WSMessageType.getAllChatLobbies, null, session.getId());
-        if(toSend != null) {
-            for(WSMessage item : toSend) {
-                super.sendFinalMessage(session, item);
-            }
-        }
+        super.executeMessage(WSMessageType.getAllChatLobbies, null, session);
     }
 
     @OnMessage @Override

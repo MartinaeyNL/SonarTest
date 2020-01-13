@@ -1,6 +1,7 @@
 package streamerchat.websockets;
 
 import com.google.gson.Gson;
+import streamerchat.messagetypes.WSMessageType;
 
 import javax.websocket.*;
 import java.io.IOException;
@@ -11,10 +12,16 @@ import java.util.Optional;
 public abstract class Endpoint {
 
     // Variables
-    public WSContext wsContext;
+    private WSContext wsContext;
     private static Collection<Session> connectedSessions = new ArrayList<>();
 
+    // Get&Setters
+    public void setWsContext(WSContext context) { this.wsContext = context; }
+
+
     /*-------------------------------------------------*/
+
+    // WEBSOCKET BASE METHODS
 
     public void onOpen(Session session) {
         connectedSessions.add(session);
@@ -22,11 +29,14 @@ public abstract class Endpoint {
     }
 
     public void onMessage(String message, Session session) {
-        Gson converter = new Gson();
-        WSMessage wsMessage = converter.fromJson(message, WSMessage.class);
+        // Creating the WSMessage from the JSON String
+        WSMessage wsMessage = new Gson().fromJson(message, WSMessage.class);
         System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
 
+        // Start Strategy pattern
         Collection<WSMessage> toSend = wsContext.start(wsMessage.messageType, wsMessage.object, session.getId());
+
+        // Send new messages depending on the result
         if(toSend != null) {
             for(WSMessage item : toSend) {
                 Session collected = this.getSessionById(item.receiver_SessionId);
@@ -44,13 +54,30 @@ public abstract class Endpoint {
     }
 
     public void onError(Throwable error, Session session) {
-        System.out.println("Foutje moet kunnen toch?");
+        System.out.println("Foutje moet kunnen toch? [" + error.getMessage() + "]");
     }
+
 
     /*---------------------------------------------------------------*/
 
+    // PUBLIC METHODS
+
+    public void executeMessage(WSMessageType type, Object parameter, Session session) {
+        Collection<WSMessage> result = this.wsContext.start(type, parameter, session.getId());
+        if(result != null) {
+            for(WSMessage item : result) {
+                this.sendFinalMessage(session, item);
+            }
+        }
+    }
+
+
+    /*---------------------------------------------*/
+
+    // PRIVATE METHODS
+
     // sendMessage method
-    public void sendFinalMessage(Session session, WSMessage wsMessage) {
+    private void sendFinalMessage(Session session, WSMessage wsMessage) {
 
         // Converting it to JSON
         Gson converter = new Gson();

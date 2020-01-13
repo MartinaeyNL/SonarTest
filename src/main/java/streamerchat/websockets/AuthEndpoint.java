@@ -12,7 +12,7 @@ public class AuthEndpoint extends Endpoint {
     @OnOpen @Override
     public void onOpen(Session session) {
         System.out.println("A user has connected to the Authentication server.");
-        super.wsContext = new AuthWSContext();
+        super.setWsContext(new AuthWSContext());
         super.onOpen(session);
     }
 
