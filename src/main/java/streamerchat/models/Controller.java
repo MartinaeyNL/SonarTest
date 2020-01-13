@@ -1,7 +1,6 @@
 package streamerchat.models;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -9,12 +8,12 @@ public class Controller {
 
     // Variables
     private Collection<ChatLobby> chatLobbies;
-    private Collection<User> connectedUsers;  // List of users
+    private Collection<Session> connectedSessions;  // List of users
 
     // Constructor
     public Controller() {
         this.chatLobbies = new ArrayList<>();
-        this.connectedUsers = new ArrayList<>();
+        this.connectedSessions = new ArrayList<>();
         this.createNewLobbies(5);
     }
 
@@ -22,29 +21,29 @@ public class Controller {
 
     // Main methods of the class
     public void addConnectedUser(String sessionId) {
-        User user = new User(sessionId);
-        this.connectedUsers.add(user);
+        Session session = new Session(sessionId);
+        this.connectedSessions.add(session);
     }
 
-    public User getConnectedUser(String sessionId) {
-        Optional<User> oUser = this.connectedUsers.stream().filter(item -> item.getSessionId().equals(sessionId)).findFirst();
+    public Session getConnectedUser(String sessionId) {
+        Optional<Session> oUser = this.connectedSessions.stream().filter(item -> item.getSessionId().equals(sessionId)).findFirst();
         return oUser.orElse(null);
     }
 
-    public Collection<User> getAllUsers() {
-        return this.connectedUsers;
+    public Collection<Session> getAllUsers() {
+        return this.connectedSessions;
     }
 
     public void disconnectUser(String sessionId) {
-        User user = this.getConnectedUser(sessionId);
-        if(user == null) {
+        Session session = this.getConnectedUser(sessionId);
+        if(session == null) {
             System.out.println("OKAY THIS IS WEIRD THE USER DOESN'T EXIST!!! TAAADUUUUUUU TAAAADUUUUUUUUUUUUUUUUUUUU");
             return;
         }
         for(ChatLobby lobby : this.chatLobbies) {
-            this.removeUserFromLobby(lobby.getDisplayname(), user);
+            this.removeUserFromLobby(lobby.getDisplayname(), session);
         }
-        this.connectedUsers.remove(user);
+        this.connectedSessions.remove(session);
     }
 
     /*----------------------------------------------------------------------*/
@@ -63,18 +62,18 @@ public class Controller {
     }
 
     // Web Socket methods
-    public void addUserToLobby(String lobbyName, User user) throws Exception {
+    public void addUserToLobby(String lobbyName, Session session) throws Exception {
         ChatLobby lobby = this.getChatLobby(lobbyName);
         if(lobby == null) {
             throw new Exception("The lobby you wanted to join doesn't exist!");
         }
-        lobby.addUser(user);
+        lobby.addUser(session);
     }
 
-    public void removeUserFromLobby(String lobbyName, User user) {
+    public void removeUserFromLobby(String lobbyName, Session session) {
         ChatLobby lobby = this.getChatLobby(lobbyName);
-        lobby.removeUser(user);
-        System.out.println("User is [" + user + "]");
+        lobby.removeUser(session);
+        System.out.println("User is [" + session + "]");
     }
 
     /*-----------------------------------------------------*/

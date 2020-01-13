@@ -2,7 +2,7 @@ package streamerchat.messagetypes;
 
 import streamerchat.websockets.WSMessage;
 import streamerchat.models.Controller;
-import streamerchat.models.User;
+import streamerchat.models.Session;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,15 +10,15 @@ import java.util.Collection;
 public class JoinChatLobby_Strategy implements WSMessageTypeStrategy {
 
     @Override
-    public Collection<WSMessage> start(Object parameter, User user, Controller controller) throws Exception {
+    public Collection<WSMessage> start(Object parameter, Session session, Controller controller) throws Exception {
 
         Collection<WSMessage> toReturn = new ArrayList<>();
 
         // Parameter checking
         if(parameter instanceof String) {
             String lobbyName = (String) parameter;
-            controller.addUserToLobby(lobbyName, user);
-            for(User u : controller.getAllUsers()) {
+            controller.addUserToLobby(lobbyName, session);
+            for(Session u : controller.getAllUsers()) {
                 toReturn.add(new WSMessage(u.getSessionId(), WSMessageType.getAllChatLobbies, controller.getAllLobbies()));
             }
             return toReturn;

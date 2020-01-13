@@ -7,38 +7,38 @@ public class ChatLobby {
 
     // Variables
     private String displayname;
-    private Collection<User> users;
+    private Collection<Session> sessions;
     private Collection<String> chatLog;
 
     // Constructor
     public ChatLobby(String name) {
         this.displayname = name;
-        this.users = new ArrayList<>();
+        this.sessions = new ArrayList<>();
         this.chatLog = new ArrayList<>();
     }
 
     // Get&Set Methods
     public String getDisplayname() { return displayname; }
-    public Collection<User> getUsers() { return users; }
+    public Collection<Session> getSessions() { return sessions; }
     public Collection<String> getChatLog() { return chatLog; }
 
-    public void addUser(User user) throws Exception {
-        if (isUserAlreadyInLobby(user)) {
-            this.users.add(user);
-            System.out.println("[LOG] User #" + user.getSessionId() + " joined ChatLobby " + this.displayname);
+    public void addUser(Session session) throws Exception {
+        if (isUserAlreadyInLobby(session)) {
+            this.sessions.add(session);
+            System.out.println("[LOG] User #" + session.getSessionId() + " joined ChatLobby " + this.displayname);
         }
     }
 
-    public void removeUser(User user) { this.users.remove(user); }
+    public void removeUser(Session session) { this.sessions.remove(session); }
 
 
     /*------------------------------------------------------------------------*/
 
     // Field and parameter checking
-    private boolean isUserAlreadyInLobby(User user) throws Exception {
-        if (this.users.size() > 0) {
-            for (User loopUser : this.users) {
-                if (loopUser.getSessionId().equals(user.getSessionId())) {
+    private boolean isUserAlreadyInLobby(Session session) throws Exception {
+        if (this.sessions.size() > 0) {
+            for (Session loopSession : this.sessions) {
+                if (loopSession.getSessionId().equals(session.getSessionId())) {
                     throw new Exception("You've already joined this lobby!");
                 }
             }

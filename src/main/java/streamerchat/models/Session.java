@@ -1,12 +1,12 @@
 package streamerchat.models;
 
-public class User {
+public class Session {
 
     // Variables
     private String sessionId;
 
     // Constructor
-    public User(String sessionId) {
+    public Session(String sessionId) {
         this.sessionId = sessionId;
     }
 
