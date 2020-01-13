@@ -35,11 +35,11 @@ public class ChatLobby {
     /*------------------------------------------------------------------------*/
 
     // Field and parameter checking
-    private boolean isUserAlreadyInLobby(Session session) throws Exception {
-        if (this.sessions.size() > 0) {
+    private boolean isUserAlreadyInLobby(Session session) throws IllegalArgumentException {
+        if (!this.sessions.isEmpty()) {
             for (Session loopSession : this.sessions) {
                 if (loopSession.getSessionId().equals(session.getSessionId())) {
-                    throw new Exception("You've already joined this lobby!");
+                    throw new IllegalArgumentException("You've already joined this lobby!");
                 }
             }
         }

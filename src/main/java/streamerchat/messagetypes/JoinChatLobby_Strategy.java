@@ -24,8 +24,5 @@ public class JoinChatLobby_Strategy implements WSMessageTypeStrategy {
             return toReturn;
         }
         else { throw new IllegalArgumentException("The lobby you put in is not a string!"); }
-
-        //System.out.println("I've arrived at the right strategy stuff meuk ding hahahahahahaahahahahah pop");
-        //return null;
     }
 }
