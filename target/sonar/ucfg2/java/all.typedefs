@@ -295,9 +295,9 @@ hashCode()java.lang.Enum#hashCode()I”
 valueOf(Ljava/lang/String;)lstreamerchat.messagetypes.WSMessageType#valueOf(Ljava/lang/String;)Lstreamerchat/messagetypes/WSMessageType;f
 values()Zstreamerchat.messagetypes.WSMessageType#values()[Lstreamerchat/messagetypes/WSMessageType;c
 <init>(Ljava/lang/String;I)Dstreamerchat.messagetypes.WSMessageType#<init>(Ljava/lang/String;I)VÈ
-streamerchat.models.Userjava.lang.ObjectO
-getDisplayname();streamerchat.models.User#getDisplayname()Ljava/lang/String;Q
-getTwitchUserId()<streamerchat.models.User#getTwitchUserId()Ljava/lang/String;v
+streamerchat.models.Userjava.lang.ObjectQ
+getTwitchUserId()<streamerchat.models.User#getTwitchUserId()Ljava/lang/String;O
+getDisplayName();streamerchat.models.User#getDisplayName()Ljava/lang/String;v
 ,<init>(Ljava/lang/String;Ljava/lang/String;)Fstreamerchat.models.User#<init>(Ljava/lang/String;Ljava/lang/String;)V„
 streamerchat.http.HttpCalljava.lang.Object0
 <init>()$streamerchat.http.HttpCall#<init>()V¡
@@ -586,9 +586,9 @@ getCause()3java.lang.Throwable#getCause()Ljava/lang/Throwable;e
 <init>(Ljava/lang/String;)>java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V†
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)Sjava.lang.IllegalArgumentException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)Vb
 <init>(Ljava/lang/Throwable;)Ajava.lang.IllegalArgumentException#<init>(Ljava/lang/Throwable;)Vú
-streamerchat.models.ChatLobbyjava.lang.ObjectT
-getDisplayname()@streamerchat.models.ChatLobby#getDisplayname()Ljava/lang/String;u
-)removeUser(Lstreamerchat/models/Session;)Hstreamerchat.models.ChatLobby#removeUser(Lstreamerchat/models/Session;)VP
+streamerchat.models.ChatLobbyjava.lang.Objectu
+)removeUser(Lstreamerchat/models/Session;)Hstreamerchat.models.ChatLobby#removeUser(Lstreamerchat/models/Session;)VT
+getDisplayName()@streamerchat.models.ChatLobby#getDisplayName()Ljava/lang/String;P
 getChatLog()@streamerchat.models.ChatLobby#getChatLog()Ljava/util/Collection;W
 <init>(Ljava/lang/String;)9streamerchat.models.ChatLobby#<init>(Ljava/lang/String;)VR
 getSessions()Astreamerchat.models.ChatLobby#getSessions()Ljava/util/Collection;‰

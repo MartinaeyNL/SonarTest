@@ -1,5 +1,5 @@
 
-;streamerchat.models.User#getDisplayname()Ljava/lang/String;{
+;streamerchat.models.User#getDisplayName()Ljava/lang/String;{
 qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/User.java ( "1*ê
 1{
 qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/User.java, (0Í
@@ -8,7 +8,7 @@ qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/
 qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/User.java, (<
 %0java.lang.String"__id*-*+
 streamerchat.models.User"
-displayname"—
+displayName"—
 {
 qH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/User.java% (=
 

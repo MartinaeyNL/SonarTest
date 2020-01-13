@@ -1,10 +1,10 @@
 
 gstreamerchat.http.HttpCall#call(Lorg/apache/http/client/methods/HttpRequestBase;)Ljava/util/Collection;}
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java (""1*ö4
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java (""1*ö4
 1}
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java (¸˘
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java (¸˘
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java (7
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java (7
 
 %0void"\org.apache.http.message.AbstractHttpMessage#addHeader(Ljava/lang/String;Ljava/lang/String;)V*;
 9
@@ -13,7 +13,7 @@ sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/
 Accept*
 application/json2/addHeader(Ljava/lang/String;Ljava/lang/String;)Çˇ
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java   (=
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java (=
 
 %1void"\org.apache.http.message.AbstractHttpMessage#addHeader(Ljava/lang/String;Ljava/lang/String;)V*;
 9
@@ -22,13 +22,13 @@ sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/
 application/json2/addHeader(Ljava/lang/String;Ljava/lang/String;)Ô
 Ï
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java#) #(85
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java!) !(85
 %2/org.apache.http.impl.client.CloseableHttpClient"__id*.*,
 streamerchat.http.HttpCall"
 
 httpClientèå
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java#) #(I:
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java!) !(I:
 %34org.apache.http.client.methods.CloseableHttpResponse"ûorg.apache.http.impl.client.CloseableHttpClient#execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/client/methods/CloseableHttpResponse;*7
 5
 %2/org.apache.http.impl.client.CloseableHttpClient*;
@@ -36,37 +36,37 @@ sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/
 request.org.apache.http.client.methods.HttpRequestBase28execute(Lorg/apache/http/client/methods/HttpUriRequest;)à
 Ö
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java# #(J@
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java! !(J@
 response4org.apache.http.client.methods.CloseableHttpResponse"__id*<
 :
 %34org.apache.http.client.methods.CloseableHttpResponseª∏
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java& &(0 
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java$ $(0 
 %4org.apache.http.HttpEntity"Dorg.apache.http.HttpResponse#getEntity()Lorg/apache/http/HttpEntity;*B
 @
 response4org.apache.http.client.methods.CloseableHttpResponse2getEntity()“
 œ
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java& &(1$
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java$ $(1$
 entityorg.apache.http.HttpEntity"__id*"
  
 %4org.apache.http.HttpEntity¨
 ©
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java' '(6
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java% %(6
 %5java.lang.String"Yorg.apache.http.util.EntityUtils#toString(Lorg/apache/http/HttpEntity;)Ljava/lang/String;*"
 	!Unknown!*&
 $
 entityorg.apache.http.HttpEntity¿
 Ω
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java' '(7
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java% %(7
 toReturnjava.lang.String"__id*
 
 %5java.lang.Stringé
 ã
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java( ((#
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java& &(#
 
 %6void"Gorg.apache.http.util.EntityUtils#consume(Lorg/apache/http/HttpEntity;)V*"
 	!Unknown!*&
@@ -74,25 +74,25 @@ $
 entityorg.apache.http.HttpEntity´
 ®
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java+ +(
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java) )(
 %7java.io.PrintStream"__id*
 ""÷
 ”
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java+ +(4
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java) )(4
 %8java.lang.String"__concat*
 toReturn = [*
 
 toReturnjava.lang.String≈
 ¬
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java+ +(:
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java) )(:
 %9java.lang.String"__concat*
 
 %8java.lang.String*
 ]ïí
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java+ +(;
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java) )(;
 %10void"0java.io.PrintStream#println(Ljava/lang/String;)V*
 
 %7java.io.PrintStream*
@@ -100,26 +100,26 @@ sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/
 %9java.lang.String2println(Ljava/lang/String;)œ
 Ã
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java," ,(&
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java*" *(&
 %11com.google.gson.Gson"__id*(*&
 streamerchat.http.HttpCall"
 gson≈¬
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java,> ,([#
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java*> *([#
 %12streamerchat.http.HttpCall$1"streamerchat.http.HttpCall$1›
 ⁄
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java,: ,(_
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java*: *(_
 %13"+com.google.gson.reflect.TypeToken#<init>()V*%
 #
 %12streamerchat.http.HttpCall$1òï
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java,: ,(i
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java*: *(i
 %14java.lang.reflect.Type"Ccom.google.gson.reflect.TypeToken#getType()Ljava/lang/reflect/Type;*%
 #
 %12streamerchat.http.HttpCall$12	getType()íè
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java," ,(j
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java*" *(j
 %15java.util.Collection"[com.google.gson.Gson#fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;*
 
 %11com.google.gson.Gson*
@@ -129,38 +129,38 @@ sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/
 %14java.lang.reflect.Type24fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)≈
 ¬
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java, ,(k
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java* *(k
 testjava.util.Collection"__id*
 
 %15java.util.Collection¨
 ©
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java- -(
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java+ +(
 %16java.io.PrintStream"__id*
 ""ﬁ
 €
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java- -(7
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java+ +(7
 %17java.lang.String"__concat*
 HttpCall returns: [*
 
 testjava.util.Collection«
 ƒ
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java- -(=
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java+ +(=
 %18java.lang.String"__concat*
 
 %17java.lang.String*
 ]óî
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java- -(>
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java+ +(>
 %19void"0java.io.PrintStream#println(Ljava/lang/String;)V*
 
 %16java.io.PrintStream*
 
 %18java.lang.String2println(Ljava/lang/String;)"ü
 }
-sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java. .(
+sH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/http/HttpCall.java, ,(
 
 testjava.util.Collection:9
 request.org.apache.http.client.methods.HttpRequestBaseB
