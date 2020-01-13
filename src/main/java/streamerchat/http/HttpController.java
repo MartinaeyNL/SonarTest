@@ -12,11 +12,6 @@ public class HttpController {
     // Variables
     private Gson gson = new Gson();
 
-    // Constructor
-    public HttpController() {
-
-    }
-
     /*---------------------------------------------------------------*/
 
     // Methods
