@@ -37,14 +37,7 @@ public abstract class Endpoint {
         Collection<WSMessage> toSend = wsContext.start(wsMessage.messageType, wsMessage.object, session.getId());
 
         // Send new messages depending on the result
-        if(toSend != null) {
-            for(WSMessage item : toSend) {
-                Session collected = this.getSessionById(item.receiver_SessionId);
-                if (collected != null) {
-                    this.sendFinalMessage(collected, item);
-                }
-            }
-        }
+        this.sendMessages(toSend);
     }
 
     public void onClose(CloseReason reason, Session session) {
@@ -64,11 +57,7 @@ public abstract class Endpoint {
 
     public void executeMessage(WSMessageType type, Object parameter, Session session) {
         Collection<WSMessage> result = this.wsContext.start(type, parameter, session.getId());
-        if(result != null) {
-            for(WSMessage item : result) {
-                this.sendFinalMessage(session, item);
-            }
-        }
+        this.sendMessages(result);
     }
 
 
@@ -76,12 +65,19 @@ public abstract class Endpoint {
 
     // PRIVATE METHODS
 
-    // sendMessage method
+    private void sendMessages(Collection<WSMessage> messages) {
+        for(WSMessage item : messages) {
+            Session collected = this.getSessionById(item.receiver_SessionId);
+            if (collected != null) {
+                this.sendFinalMessage(collected, item);
+            }
+        }
+    }
+
     private void sendFinalMessage(Session session, WSMessage wsMessage) {
 
         // Converting it to JSON
-        Gson converter = new Gson();
-        String message = converter.toJson(wsMessage);
+        String message = new Gson().toJson(wsMessage);
 
         // Sending the actual object
         try {
