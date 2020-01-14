@@ -8,6 +8,7 @@ import streamerchat.models.Controller;
 import streamerchat.models.Session;
 import streamerchat.websockets.WSMessageConverter;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Authenticate_Strategy implements WSMessageTypeStrategy {
@@ -20,7 +21,10 @@ public class Authenticate_Strategy implements WSMessageTypeStrategy {
         User user = gson.fromJson(object.toString(), User.class);               // Converting the object to JSON
         Collection<Object> result = new HttpController().createUser(user);      // Making the call to Controller
 
+        Collection<String> sessionIds = new ArrayList<>();
+        sessionIds.add(session.getSessionId());
+
         // Parsing it to WSMessages
-        return new WSMessageConverter().toWSMessages(WSMessageType.AUTHENTICATE, session.getSessionId(), result);
+        return new WSMessageConverter().toWSMessages(WSMessageType.AUTHENTICATE, sessionIds, result);
     }
 }

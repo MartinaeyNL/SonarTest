@@ -12,11 +12,14 @@ public class GetAllChatLobbies_Strategy implements WSMessageTypeStrategy {
 
     @Override
     public Collection<WSMessage> start(Object parameter, Session session, Controller controller) {
-        Collection<Object> toSend = new ArrayList<>();
-        toSend.add(controller.getAllLobbies());
-        return new WSMessageConverter().toWSMessages(WSMessageType.GET_ALL_CHAT_LOBBIES, session.getSessionId(), toSend);
-        //Collection<WSMessage> toReturn = new ArrayList<>();
-        //toReturn.add(new WSMessage(session.getSessionId(), WSMessageType.GET_ALL_CHAT_LOBBIES, controller.getAllLobbies()));
-        //return toReturn;
+
+        Collection<Object> toSend = new ArrayList<>();      // Creating list of objects
+        toSend.add(controller.getAllLobbies());             // Adding the lobby as ONE object of it
+
+        Collection<String> sessionIds = new ArrayList<>();
+        sessionIds.add(session.getSessionId());
+
+        // Parsing it to WSMessages
+        return new WSMessageConverter().toWSMessages(WSMessageType.GET_ALL_CHAT_LOBBIES, sessionIds, toSend);
     }
 }
