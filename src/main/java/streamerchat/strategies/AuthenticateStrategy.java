@@ -22,6 +22,7 @@ public class AuthenticateStrategy implements WSMessageTypeStrategy {
         User user = gson.fromJson(object.toString(), User.class);               // Converting the object to JSON
         Collection<Object> result = new HttpController().createUser(user);      // Making the call to Controller
 
+        // Adding the people that need to receive a message
         Collection<String> sessionIds = new ArrayList<>();
         sessionIds.add(session.getSessionId());
 
