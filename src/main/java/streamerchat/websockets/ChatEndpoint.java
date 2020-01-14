@@ -12,10 +12,11 @@ public class ChatEndpoint extends Endpoint {
 
     /*-------------------------------------------------*/
 
-    @OnOpen
+    @OnOpen @Override
     public void onOpen(Session session) {
         System.out.println("A user has connected to the Streamer Chat server.");
-        super.onOpen(session, WS_CONTEXT);
+        super.onOpen(session);
+        WS_CONTEXT.connectUser(session.getId());
         super.executeMessage(WSMessageType.GET_ALL_CHAT_LOBBIES, null, session, WS_CONTEXT);
     }
 
@@ -26,7 +27,8 @@ public class ChatEndpoint extends Endpoint {
 
     @OnClose
     public void onClose(CloseReason reason, Session session) {
-        super.onClose(reason, session, WS_CONTEXT);
+        super.onClose(reason, session);
+        WS_CONTEXT.disconnectUser(session.getId());
     }
 
     @OnError @Override

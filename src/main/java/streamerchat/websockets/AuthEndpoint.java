@@ -8,10 +8,11 @@ public class AuthEndpoint extends Endpoint {
 
     private static final WSContext WS_CONTEXT = new AuthWSContext();
 
-    @OnOpen
+    @OnOpen @Override
     public void onOpen(Session session) {
         System.out.println("A user has connected to the Authentication server.");
-        super.onOpen(session, WS_CONTEXT);
+        super.onOpen(session);
+        WS_CONTEXT.connectUser(session.getId());
     }
 
     @OnMessage
@@ -19,9 +20,10 @@ public class AuthEndpoint extends Endpoint {
         super.onMessage(message, session, WS_CONTEXT);
     }
 
-    @OnClose
+    @OnClose @Override
     public void onClose(CloseReason reason, Session session) {
-        super.onClose(reason, session, WS_CONTEXT);
+        super.onClose(reason, session);
+        WS_CONTEXT.disconnectUser(session.getId());
     }
 
     @OnError @Override

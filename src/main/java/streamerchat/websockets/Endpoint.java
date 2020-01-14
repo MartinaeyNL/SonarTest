@@ -18,9 +18,8 @@ public abstract class Endpoint {
 
     // WEBSOCKET BASE METHODS
 
-    public void onOpen(Session session, WSContext context) {
+    public void onOpen(Session session) {
         connectedSessions.add(session);
-        context.connectUser(session.getId());
     }
 
     public void onMessage(String message, Session session, WSContext context) {
@@ -35,10 +34,9 @@ public abstract class Endpoint {
         this.sendMessages(toSend);
     }
 
-    public void onClose(CloseReason reason, Session session, WSContext context) {
+    public void onClose(CloseReason reason, Session session) {
         System.out.println("A user closed the connection due to [" + reason + "]");
         connectedSessions.remove(session);
-        context.disconnectUser(session.getId());
     }
 
     public void onError(Throwable error, Session session) {
