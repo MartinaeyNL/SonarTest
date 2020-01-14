@@ -25,7 +25,7 @@ public class ChatEndpoint extends Endpoint {
         super.onMessage(message, session, WS_CONTEXT);
     }
 
-    @OnClose
+    @OnClose @Override
     public void onClose(CloseReason reason, Session session) {
         super.onClose(reason, session);
         WS_CONTEXT.disconnectUser(session.getId());

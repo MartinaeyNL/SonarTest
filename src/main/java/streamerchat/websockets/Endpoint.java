@@ -81,8 +81,8 @@ public abstract class Endpoint {
             try { session.getBasicRemote().sendText("Something went wrong with sending the object! :("); }
             catch (Exception ex) { ex.printStackTrace(); } // Temporary !!!
         }
-        catch (IOException io_e) {
-            io_e.printStackTrace(); // Temporary !!!
+        catch (IOException io) {
+            io.printStackTrace(); // Temporary !!!
         }
     }
 

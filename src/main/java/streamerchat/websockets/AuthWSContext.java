@@ -4,7 +4,6 @@ import streamerchat.messagetypes.*;
 import streamerchat.models.Controller;
 
 import java.util.EnumMap;
-import java.util.HashMap;
 
 public class AuthWSContext extends WSContext {
 

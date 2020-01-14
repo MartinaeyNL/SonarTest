@@ -1,0 +1,71 @@
+
+Rstreamerchat.models.ChatLobby#isUserAlreadyInLobby(Lstreamerchat/models/Session;)Z€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java* *(("6*Ñ
+2€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java, ,($À
+½
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java, ,($*
+loopSessionstreamerchat.models.Session"__id*
+""*
+4
+1*”
+3€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java. .("‹
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java. .( 
+""*Ú
+4€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java- -(š—
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java- -(.
+%3java.lang.String"<streamerchat.models.Session#getSessionId()Ljava/lang/String;*,
+*
+loopSessionstreamerchat.models.Session2getSessionId()–“
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java-6 -(L
+%4java.lang.String"<streamerchat.models.Session#getSessionId()Ljava/lang/String;*(
+&
+sessionstreamerchat.models.Session2getSessionId()“
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java- -(M
+%5boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+%3java.lang.String*
+
+%4java.lang.String2equals(Ljava/lang/Object;)*
+2
+3*ç
+5€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java,' ,(+Ù
+Ö
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java,' ,(4
+%2java.util.Collection"__id*/*-
+streamerchat.models.ChatLobby"
+
+sessions*
+2*Ì
+6€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java+ +(Ù
+Ö
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java+ +(
+%0java.util.Collection"__id*/*-
+streamerchat.models.ChatLobby"
+
+sessionsßÜ
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java+ +($
+%1boolean"java.util.Collection#isEmpty()Z*
+
+%0java.util.Collection2	isEmpty()*
+5
+1*”
+1€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java2 2("‹
+€
+vH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/ChatLobby.java2 2(
+"":&
+sessionstreamerchat.models.SessionB!
+streamerchat.models.ChatLobby
