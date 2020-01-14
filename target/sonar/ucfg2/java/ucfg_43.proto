@@ -1,59 +1,0 @@
-
-\streamerchat.websockets.Endpoint#getSessionById(Ljava/lang/String;)Ljavax/websocket/Session;ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.java` `(""3*ä
-2ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javac c(®«
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javac c('
-%5javax.websocket.Session"?java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;*
-
-sessionjava.util.Optional*
-""2orElse(Ljava/lang/Object;)"§
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javac c((
-
-%5javax.websocket.Session* 
-3ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javaa$ a(5è
-å
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javaa$ a(5
-%0java.util.Collection"__id*;*9"
- streamerchat.websockets.Endpoint"
-connectedSessionsˆ…
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javaa$ a(>
-%1java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*
-
-%0java.util.Collection2stream()ÒÏ
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javaa$ a(m
-%2java.util.stream.Stream"Wjava.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;*
-
-%1java.util.stream.Stream*
-""2&filter(Ljava/util/function/Predicate;)Š‡
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javaa$ a(y
-%3java.util.Optional"7java.util.stream.Stream#findFirst()Ljava/util/Optional;*
-
-%2java.util.stream.Stream2findFirst()Ê
-Ç
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javaa a(z
-sessionjava.util.Optional"__id*
-
-%3java.util.Optionalçä
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javab b(
-%4boolean"java.util.Optional#isPresent()Z*
-
-sessionjava.util.Optional2isPresent()*
-2
-1*š
-1ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javae e("Ž
-ƒ
-yH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/Endpoint.javae e(
-"":
-	sessionIdjava.lang.StringB$"
- streamerchat.websockets.Endpoint

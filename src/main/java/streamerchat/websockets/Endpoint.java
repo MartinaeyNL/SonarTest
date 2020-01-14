@@ -12,42 +12,37 @@ import java.util.Optional;
 public abstract class Endpoint {
 
     // Variables
-    private WSContext wsContext;
     private static Collection<Session> connectedSessions = new ArrayList<>();
-
-    // Get&Setters
-    public void setWsContext(WSContext context) { this.wsContext = context; }
-
 
     /*-------------------------------------------------*/
 
     // WEBSOCKET BASE METHODS
 
-    public void onOpen(Session session) {
+    public void onOpen(Session session, WSContext context) {
         connectedSessions.add(session);
-        wsContext.connectUser(session.getId());
+        context.connectUser(session.getId());
     }
 
-    public void onMessage(String message, Session session) {
+    public void onMessage(String message, Session session, WSContext context) {
         // Creating the WSMessage from the JSON String
         WSMessage wsMessage = new Gson().fromJson(message, WSMessage.class);
         System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
 
         // Start Strategy pattern
-        Collection<WSMessage> toSend = wsContext.start(wsMessage.messageType, wsMessage.object, session.getId());
+        Collection<WSMessage> toSend = context.start(wsMessage.messageType, wsMessage.object, session.getId());
 
         // Send new messages depending on the result
         this.sendMessages(toSend);
     }
 
-    public void onClose(CloseReason reason, Session session) {
+    public void onClose(CloseReason reason, Session session, WSContext context) {
         System.out.println("A user closed the connection due to [" + reason + "]");
         connectedSessions.remove(session);
-        wsContext.disconnectUser(session.getId());
+        context.disconnectUser(session.getId());
     }
 
     public void onError(Throwable error, Session session) {
-        System.out.println("Foutje moet kunnen toch? [" + error.getMessage() + "]");
+        System.out.println("Foutje moet kunnen toch? [" + error.getLocalizedMessage() + "]");
     }
 
 
@@ -55,8 +50,8 @@ public abstract class Endpoint {
 
     // PUBLIC METHODS
 
-    public void executeMessage(WSMessageType type, Object parameter, Session session) {
-        Collection<WSMessage> result = this.wsContext.start(type, parameter, session.getId());
+    public void executeMessage(WSMessageType type, Object parameter, Session session, WSContext context) {
+        Collection<WSMessage> result = context.start(type, parameter, session.getId());
         this.sendMessages(result);
     }
 

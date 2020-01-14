@@ -1,45 +1,0 @@
-
-`streamerchat.models.Controller#getConnectedUser(Ljava/lang/String;)Lstreamerchat/models/Session;Å
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java (#"1*˝
-1Å
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java" (&‰
-·
-Å
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java" (8
-%0java.util.Collection"__id*9*7 
-streamerchat.models.Controller"
-connectedSessionsÜÉ
-Å
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java" (A
-%1java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*
-
-%0java.util.Collection2stream()–Õ
-Å
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java" (w
-%2java.util.stream.Stream"Wjava.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;*
-
-%1java.util.stream.Stream*
-""2&filter(Ljava/util/function/Predicate;)âÜ
-Ç
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java" (É
-%3java.util.Optional"7java.util.stream.Stream#findFirst()Ljava/util/Optional;*
-
-%2java.util.stream.Stream2findFirst()«
-ƒ
-Ç
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java (Ñ
-oUserjava.util.Optional"__id*
-
-%3java.util.OptionalÆ´
-Å
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java (!!
-%4streamerchat.models.Session"?java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;*
-
-oUserjava.util.Optional*
-""2orElse(Ljava/lang/Object;)"©
-Å
-wH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/models/Controller.java ("#
-!
-%4streamerchat.models.Session:
-	sessionIdjava.lang.StringB" 
-streamerchat.models.Controller

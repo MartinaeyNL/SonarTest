@@ -38,9 +38,6 @@ public class HttpCall {
         EntityUtils.consume(entity);
 
         // Handling the response
-        System.out.println("toReturn = [" + toReturn + "]");
-        Collection<Object> test = gson.fromJson(toReturn, new TypeToken<Collection<Object>>(){}.getType());
-        System.out.println("HttpCall returns: [" + test + "]");
-        return test;
+        return gson.fromJson(toReturn, new TypeToken<Collection<Object>>(){}.getType());
     }
 }
