@@ -18,8 +18,9 @@ public class LeaveChatLobby_Strategy implements WSMessageTypeStrategy {
 
         // Parameter checking
         if(parameter instanceof String) {
-            Collection<String> sessionIds = new ArrayList<>();
             controller.removeUserFromLobby((String) parameter, session);
+
+            Collection<String> sessionIds = new ArrayList<>();
             for(Session u : controller.getAllUsers()) {
                 sessionIds.add(u.getSessionId());
             }

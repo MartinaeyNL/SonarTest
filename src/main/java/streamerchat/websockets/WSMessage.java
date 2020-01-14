@@ -5,14 +5,18 @@ import streamerchat.messagetypes.WSMessageType;
 public class WSMessage {
 
     // Variables
-    public String receiver_SessionId;
-    public WSMessageType messageType;
-    public Object object;
+    private String receiverSessionId;
+    private WSMessageType messageType;
+    private Object object;
 
     // Constructor
-    public WSMessage(String receiver_SessionId, WSMessageType messageType, Object data) {
-        this.receiver_SessionId = receiver_SessionId;
+    public WSMessage(String receiverSessionId, WSMessageType messageType, Object data) {
+        this.receiverSessionId = receiverSessionId;
         this.messageType = messageType;
         this.object = data;
     }
+
+    public String getSessionId() { return this.receiverSessionId; }
+    public WSMessageType getMessageType() { return this.messageType; }
+    public Object getObject() { return this.object; }
 }

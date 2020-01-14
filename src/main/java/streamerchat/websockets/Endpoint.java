@@ -25,10 +25,10 @@ public abstract class Endpoint {
     public void onMessage(String message, Session session, WSContext context) {
         // Creating the WSMessage from the JSON String
         WSMessage wsMessage = new Gson().fromJson(message, WSMessage.class);
-        System.out.println("Received message with type [" + wsMessage.messageType.name() + "] and the object was [" + wsMessage.object + "]");
+        System.out.println("Received message with type [" + wsMessage.getMessageType().name() + "] and the object was [" + wsMessage.getObject() + "]");
 
         // Start Strategy pattern
-        Collection<WSMessage> toSend = context.start(wsMessage.messageType, wsMessage.object, session.getId());
+        Collection<WSMessage> toSend = context.start(wsMessage.getMessageType(), wsMessage.getObject(), session.getId());
 
         // Send new messages depending on the result
         this.sendMessages(toSend);
@@ -60,7 +60,7 @@ public abstract class Endpoint {
 
     private void sendMessages(Collection<WSMessage> messages) {
         for(WSMessage item : messages) {
-            Session collected = this.getSessionById(item.receiver_SessionId);
+            Session collected = this.getSessionById(item.getSessionId());
             if (collected != null) {
                 this.sendFinalMessage(collected, item);
             }

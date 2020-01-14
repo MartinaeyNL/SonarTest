@@ -27,11 +27,7 @@ public abstract class WSContext {
             toReturn.add(new WSMessage(session.getSessionId(), WSMessageType.ERROR, e.getMessage()));
             System.out.println("There was a freaking error! Wow! This is him: [" + e.getMessage() + "]");
         }
-
-        if(toReturn.size() > 0) {
-            return toReturn;
-        }
-        return null;
+        return toReturn;
     }
 
     /*----------------------------------------------------------------------*/
