@@ -1,102 +1,0 @@
-
-Œstreamerchat.websockets.WSContext#start(Lstreamerchat/messagetypes/WSMessageType;Ljava/lang/Object;Ljava/lang/String;)Ljava/util/Collection;„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java! (&"10*â
-2„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java (GÐ
-Í
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java (G 
-toReturnjava.util.Collection"__id*
-
-%7java.util.Collection*
-1*Ñ
-9„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java (!í
-ê
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java< (F$
-%6streamerchat.models.Controller"__id*5*3#
-!streamerchat.websockets.WSContext"
-
-controllerÏÌ
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java (G
-%7java.util.Collection"œstreamerchat.messagetypes.WSMessageTypeStrategy#start(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)Ljava/util/Collection;*=
-;
-strategy/streamerchat.messagetypes.WSMessageTypeStrategy*
-
-	parameterjava.lang.Object*(
-&
-sessionstreamerchat.models.Session*&
-$
-%6streamerchat.models.Controller2Vstart(Ljava/lang/Object;Lstreamerchat/models/Session;Lstreamerchat/models/Controller;)*
-2*¿
-10„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java) (-Ü
-Ù
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java) (8
-%0java.util.Map"__id*5*3#
-!streamerchat.websockets.WSContext"
-
-strategies•
-’
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java) (B5
-%1/streamerchat.messagetypes.WSMessageTypeStrategy"__mapGet*
-
-%0java.util.Map*1
-/
-type'streamerchat.messagetypes.WSMessageType†
-ƒ
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java (C;
-strategy/streamerchat.messagetypes.WSMessageTypeStrategy"__id*7
-5
-%1/streamerchat.messagetypes.WSMessageTypeStrategyí
-ê
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java ()$
-%2streamerchat.models.Controller"__id*5*3#
-!streamerchat.websockets.WSContext"
-
-controllerþû
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java (E!
-%3streamerchat.models.Session"`streamerchat.models.Controller#getConnectedUser(Ljava/lang/String;)Lstreamerchat/models/Session;*&
-$
-%2streamerchat.models.Controller*
-
-	sessionIdjava.lang.String2$getConnectedUser(Ljava/lang/String;)Ý
-Ú
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java (F&
-sessionstreamerchat.models.Session"__id*#
-!
-%3streamerchat.models.Sessionº·
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java- (8
-%4java.util.ArrayList"java.util.ArrayListÌ
-É
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java) (:
-%5"java.util.ArrayList#<init>()V*
-
-%4java.util.ArrayListÏ
-Ì
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java (; 
-toReturnjava.util.Collection"__id*
-
-%4java.util.ArrayList*
-9*¸
-1„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java ("«
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSContext.java ("
- 
-toReturnjava.util.Collection:/
-type'streamerchat.messagetypes.WSMessageType:
-	parameterjava.lang.Object:
-	sessionIdjava.lang.StringB%#
-!streamerchat.websockets.WSContext

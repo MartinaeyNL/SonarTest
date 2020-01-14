@@ -1,7 +1,0 @@
-organization=martinaeynl
-projectKey=MartinaeyNL_SonarTest
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.4039
-dashboardUrl=https://sonarcloud.io/dashboard?id=MartinaeyNL_SonarTest
-ceTaskId=AW-kDVqxVRDEuxQVQqFo
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW-kDVqxVRDEuxQVQqFo

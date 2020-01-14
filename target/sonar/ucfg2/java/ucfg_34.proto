@@ -1,16 +1,0 @@
-
-Bstreamerchat.websockets.WSMessage#getSessionId()Ljava/lang/String;„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSMessage.java ("1*—
-1„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSMessage.java* (.æ
-ã
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSMessage.java* (@
-%0java.lang.String"__id*<*:#
-!streamerchat.websockets.WSMessage"
-receiverSessionId"¡
-„
-zH:/IntelliJ_Projects/TOOLBOARD/websocket/javax_v1/toolboard-websocket/src/main/java/streamerchat/websockets/WSMessage.java# (A
-
-%0java.lang.StringB%#
-!streamerchat.websockets.WSMessage

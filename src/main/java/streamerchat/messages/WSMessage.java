@@ -1,7 +1,5 @@
 package streamerchat.messages;
 
-import streamerchat.messages.WSMessageType;
-
 public class WSMessage {
 
     // Variables
