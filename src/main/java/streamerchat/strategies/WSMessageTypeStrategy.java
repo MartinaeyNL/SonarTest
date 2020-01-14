@@ -1,6 +1,6 @@
-package streamerchat.messagetypes;
+package streamerchat.strategies;
 
-import streamerchat.websockets.WSMessage;
+import streamerchat.messages.WSMessage;
 import streamerchat.models.Controller;
 import streamerchat.models.Session;
 

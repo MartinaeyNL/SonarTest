@@ -1,7 +1,8 @@
 package streamerchat.websockets;
 
-import streamerchat.messagetypes.*;
+import streamerchat.messages.*;
 import streamerchat.models.Controller;
+import streamerchat.strategies.AuthenticateStrategy;
 
 import java.util.EnumMap;
 
@@ -11,6 +12,6 @@ public class AuthWSContext extends WSContext {
     public AuthWSContext() {
         this.controller = new Controller();
         this.strategies = new EnumMap<>(WSMessageType.class);
-        this.strategies.put(WSMessageType.AUTHENTICATE, new Authenticate_Strategy());
+        this.strategies.put(WSMessageType.AUTHENTICATE, new AuthenticateStrategy());
     }
 }

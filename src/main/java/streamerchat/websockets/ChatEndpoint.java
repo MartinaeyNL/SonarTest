@@ -1,6 +1,6 @@
 package streamerchat.websockets;
 
-import streamerchat.messagetypes.WSMessageType;
+import streamerchat.messages.WSMessageType;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;

@@ -1,17 +1,18 @@
-package streamerchat.messagetypes;
+package streamerchat.strategies;
 
 import com.google.gson.Gson;
 import streamerchat.http.HttpController;
+import streamerchat.messages.WSMessageType;
 import streamerchat.models.User;
-import streamerchat.websockets.WSMessage;
+import streamerchat.messages.WSMessage;
 import streamerchat.models.Controller;
 import streamerchat.models.Session;
-import streamerchat.websockets.WSMessageConverter;
+import streamerchat.messages.WSMessageConverter;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Authenticate_Strategy implements WSMessageTypeStrategy {
+public class AuthenticateStrategy implements WSMessageTypeStrategy {
 
     private Gson gson = new Gson();
 

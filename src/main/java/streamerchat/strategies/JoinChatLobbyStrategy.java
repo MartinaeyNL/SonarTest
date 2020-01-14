@@ -1,25 +1,25 @@
-package streamerchat.messagetypes;
+package streamerchat.strategies;
 
-import streamerchat.websockets.WSMessage;
+import streamerchat.messages.WSMessageType;
+import streamerchat.messages.WSMessage;
 import streamerchat.models.Controller;
 import streamerchat.models.Session;
-import streamerchat.websockets.WSMessageConverter;
+import streamerchat.messages.WSMessageConverter;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class LeaveChatLobby_Strategy implements WSMessageTypeStrategy {
+public class JoinChatLobbyStrategy implements WSMessageTypeStrategy {
 
     @Override
-    public Collection<WSMessage> start(Object parameter, Session session, Controller controller) {
+    public Collection<WSMessage> start(Object parameter, Session session, Controller controller) throws Exception {
 
         Collection<Object> toSend = new ArrayList<>();     // Creating list of objects
         toSend.add(controller.getAllLobbies());            // Adding the lobby as ONE object of it
 
         // Parameter checking
         if(parameter instanceof String) {
-            controller.removeUserFromLobby((String) parameter, session);
-
+            controller.addUserToLobby((String) parameter, session);
             Collection<String> sessionIds = new ArrayList<>();
             for(Session u : controller.getAllUsers()) {
                 sessionIds.add(u.getSessionId());

@@ -1,6 +1,4 @@
-package streamerchat.websockets;
-
-import streamerchat.messagetypes.WSMessageType;
+package streamerchat.messages;
 
 import java.util.ArrayList;
 import java.util.Collection;

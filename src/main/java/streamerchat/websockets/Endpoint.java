@@ -1,7 +1,8 @@
 package streamerchat.websockets;
 
 import com.google.gson.Gson;
-import streamerchat.messagetypes.WSMessageType;
+import streamerchat.messages.WSMessage;
+import streamerchat.messages.WSMessageType;
 
 import javax.websocket.*;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package streamerchat.messagetypes;
+package streamerchat.messages;
 
 public enum WSMessageType {
     ERROR,

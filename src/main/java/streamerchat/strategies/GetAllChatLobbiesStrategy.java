@@ -1,14 +1,15 @@
-package streamerchat.messagetypes;
+package streamerchat.strategies;
 
-import streamerchat.websockets.WSMessage;
+import streamerchat.messages.WSMessageType;
+import streamerchat.messages.WSMessage;
 import streamerchat.models.Controller;
 import streamerchat.models.Session;
-import streamerchat.websockets.WSMessageConverter;
+import streamerchat.messages.WSMessageConverter;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class GetAllChatLobbies_Strategy implements WSMessageTypeStrategy {
+public class GetAllChatLobbiesStrategy implements WSMessageTypeStrategy {
 
     @Override
     public Collection<WSMessage> start(Object parameter, Session session, Controller controller) {

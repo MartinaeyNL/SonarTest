@@ -1,6 +1,6 @@
-package streamerchat.websockets;
+package streamerchat.messages;
 
-import streamerchat.messagetypes.WSMessageType;
+import streamerchat.messages.WSMessageType;
 
 public class WSMessage {
 
